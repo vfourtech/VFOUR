@@ -1,0 +1,1314 @@
+/* =========================================================
+   VFOUR CONTACT
+========================================================= */
+
+.contact-section {
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    color: #111111;
+}
+
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.contact-background {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   SUBTLE GRID
+========================================================= */
+
+.contact-grid {
+    position: absolute;
+
+    inset: 0;
+
+    opacity: 0.015;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.15) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.15) 1px,
+            transparent 1px
+        );
+
+    background-size: 70px 70px;
+}
+
+
+/* =========================================================
+   SUBTLE BLUE ACCENT
+========================================================= */
+
+.contact-blue-glow {
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    top: -250px;
+    right: -200px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(37, 99, 235, 0.025);
+
+    filter: blur(120px);
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.contact-container {
+    position: relative;
+
+    z-index: 2;
+
+    display: grid;
+
+    grid-template-columns:
+        42% 58%;
+
+    width: 100%;
+
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   LEFT SIDE — GREY
+========================================================= */
+
+.contact-brand {
+    position: relative;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding:
+        70px 7vw;
+
+    box-sizing: border-box;
+
+    background: #f2f2f2;
+
+    border-right:
+        1px solid
+        #e4e4e4;
+}
+
+
+/* =========================================================
+   LEFT CONTENT
+========================================================= */
+
+.contact-brand-content {
+    max-width: 560px;
+
+    animation:
+        brandReveal
+        0.9s
+        cubic-bezier(
+            0.16,
+            1,
+            0.3,
+            1
+        )
+        both;
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.contact-eyebrow {
+    display: block;
+
+    margin-bottom: 25px;
+
+    color: #2563eb;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+
+/* =========================================================
+   MAIN HEADING
+========================================================= */
+
+.contact-main-heading {
+    margin: 0;
+
+    color: #111111;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(
+            48px,
+            5vw,
+            78px
+        );
+
+    font-weight: 400;
+
+    line-height: 0.94;
+
+    letter-spacing: -4px;
+
+    animation:
+        headingFloat
+        8s
+        ease-in-out
+        infinite;
+}
+
+
+.contact-main-heading span {
+    display: inline-block;
+
+    color: #666666;
+
+    transition:
+        transform
+        0.7s
+        cubic-bezier(
+            0.16,
+            1,
+            0.3,
+            1
+        );
+}
+
+
+.contact-main-heading:hover span {
+    transform:
+        translateX(10px);
+}
+
+
+/* =========================================================
+   LEFT DESCRIPTION
+========================================================= */
+
+.contact-brand-content p {
+    margin:
+        35px 0 0;
+
+    color: #777777;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 12px;
+
+    line-height: 1.8;
+
+    animation:
+        paragraphReveal
+        0.9s
+        0.15s
+        both;
+}
+
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+.contact-progress {
+    position: absolute;
+
+    left: 7vw;
+
+    bottom: 70px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+}
+
+
+.progress-item {
+    display: block;
+
+    width: 25px;
+
+    height: 2px;
+
+    background: #d0d0d0;
+
+    transition:
+        width
+        0.5s
+        cubic-bezier(
+            0.16,
+            1,
+            0.3,
+            1
+        ),
+        background
+        0.4s ease;
+}
+
+
+.progress-item.active {
+    width: 40px;
+
+    background: #2563eb;
+}
+
+
+/* =========================================================
+   RIGHT SIDE — WHITE
+========================================================= */
+
+.contact-conversation {
+    position: relative;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding:
+        80px 9vw;
+
+    box-sizing: border-box;
+
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   CONVERSATION STEP
+========================================================= */
+
+.conversation-step {
+    width: 100%;
+
+    max-width: 680px;
+
+    animation:
+        questionEnter
+        0.55s
+        cubic-bezier(
+            0.16,
+            1,
+            0.3,
+            1
+        )
+        both;
+}
+
+
+/* =========================================================
+   MESSAGE
+========================================================= */
+
+.conversation-message {
+    display: block;
+
+    margin-bottom: 24px;
+
+    color: #666666;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    animation:
+        messageReveal
+        0.5s
+        0.03s
+        both;
+}
+
+
+/* =========================================================
+   QUESTION
+========================================================= */
+
+.conversation-step label {
+    display: block;
+
+    margin-bottom: 32px;
+
+    color: #111111;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(
+            38px,
+            4.3vw,
+            62px
+        );
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    letter-spacing: -3px;
+
+    animation:
+        questionTextReveal
+        0.55s
+        0.06s
+        both;
+}
+
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+.conversation-step input {
+    display: block;
+
+    width: 100%;
+
+    height: 65px;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+    border: none;
+
+    border-bottom:
+        1px solid
+        #cfcfcf;
+
+    outline: none;
+
+    background: transparent;
+
+    color: #111111;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 18px;
+
+    transition:
+        border-color
+        0.35s ease,
+        transform
+        0.35s ease;
+}
+
+
+.conversation-step input::placeholder {
+    color: #b3b3b3;
+}
+
+
+.conversation-step input:focus {
+    border-bottom-color:
+        #2563eb;
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* =========================================================
+   TEXTAREA
+========================================================= */
+
+.conversation-step textarea {
+    display: block;
+
+    width: 100%;
+
+    min-height: 160px;
+
+    padding: 18px;
+
+    box-sizing: border-box;
+
+    resize: vertical;
+
+    border:
+        1px solid
+        #d5d5d5;
+
+    border-radius: 10px;
+
+    outline: none;
+
+    background: #fafafa;
+
+    color: #111111;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    transition:
+        border-color
+        0.35s ease,
+        box-shadow
+        0.35s ease,
+        transform
+        0.35s ease;
+}
+
+
+.conversation-step textarea::placeholder {
+    color: #aaaaaa;
+}
+
+
+.conversation-step textarea:focus {
+    border-color:
+        #2563eb;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(
+            37,
+            99,
+            235,
+            0.035
+        );
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.conversation-button {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 180px;
+
+    height: 52px;
+
+    margin-top: 28px;
+
+    overflow: hidden;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: #111111;
+
+    color: #ffffff;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition:
+        background
+        0.3s ease,
+        transform
+        0.3s ease,
+        box-shadow
+        0.3s ease,
+        opacity
+        0.3s ease;
+}
+
+
+/* =========================================================
+   BUTTON LIGHT SWEEP
+========================================================= */
+
+.conversation-button::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -110%;
+
+    width: 100%;
+    height: 100%;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.08
+        );
+
+    transition:
+        left
+        0.45s
+        cubic-bezier(
+            0.16,
+            1,
+            0.3,
+            1
+        );
+}
+
+
+.conversation-button:hover::before {
+    left: 110%;
+}
+
+
+.conversation-button:hover {
+    background: #2563eb;
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 15px 35px
+        rgba(
+            37,
+            99,
+            235,
+            0.12
+        );
+}
+
+
+.conversation-button:active {
+    transform:
+        translateY(0);
+}
+
+
+.conversation-button:disabled {
+    opacity: 0.35;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   FINAL SUBMIT BUTTON
+========================================================= */
+
+.contact-submit {
+    width: 100%;
+}
+
+
+/* =========================================================
+   FORM ERROR
+========================================================= */
+
+.contact-form-error {
+    margin-top: 15px;
+
+    padding: 12px 15px;
+
+    border-radius: 8px;
+
+    background:
+        rgba(
+            0,
+            0,
+            0,
+            0.04
+        );
+
+    color: #555555;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   SUCCESS
+========================================================= */
+
+.contact-success {
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 30px;
+
+    box-sizing: border-box;
+
+    text-align: center;
+
+    background: #ffffff;
+
+    animation:
+        successIn
+        0.8s
+        ease
+        both;
+}
+
+
+.contact-success-label {
+    margin-bottom: 20px;
+
+    color: #2563eb;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+
+.contact-success h2 {
+    margin: 0;
+
+    color: #111111;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(
+            60px,
+            10vw,
+            140px
+        );
+
+    font-weight: 400;
+
+    line-height: 0.9;
+
+    letter-spacing: -6px;
+}
+
+
+.contact-success p {
+    margin:
+        30px 0 0;
+
+    color: #777777;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+.contact-success-line {
+    width: 65px;
+
+    height: 2px;
+
+    margin-top: 35px;
+
+    background: #2563eb;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes questionEnter {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translateX(25px)
+            translateY(10px);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translateX(0)
+            translateY(0);
+    }
+}
+
+
+@keyframes messageReveal {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(10px);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes questionTextReveal {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(18px);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes brandReveal {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translateX(-25px);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translateX(0);
+    }
+}
+
+
+@keyframes paragraphReveal {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(12px);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes headingFloat {
+
+    0%,
+    100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-3px);
+    }
+}
+
+
+@keyframes successIn {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(25px);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .contact-container {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .contact-brand {
+        min-height:
+            auto;
+
+        padding:
+            80px 50px 55px;
+
+        border-right:
+            none;
+
+        border-bottom:
+            1px solid
+            #dedede;
+    }
+
+
+    .contact-conversation {
+        min-height:
+            65vh;
+
+        padding:
+            80px 50px;
+    }
+
+
+    .contact-progress {
+        position:
+            relative;
+
+        left:
+            auto;
+
+        bottom:
+            auto;
+
+        margin-top:
+            40px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .contact-section {
+        min-height:
+            100svh;
+    }
+
+
+    .contact-container {
+        display:
+            block;
+
+        min-height:
+            100svh;
+    }
+
+
+    /* -----------------------------------------
+       LEFT
+    ----------------------------------------- */
+
+    .contact-brand {
+        min-height:
+            auto;
+
+        padding:
+            60px 25px 40px;
+
+        background:
+            #f2f2f2;
+    }
+
+
+    .contact-eyebrow {
+        margin-bottom:
+            18px;
+
+        font-size:
+            8px;
+
+        letter-spacing:
+            2.5px;
+    }
+
+
+    .contact-main-heading {
+        font-size:
+            clamp(
+                42px,
+                12vw,
+                58px
+            );
+
+        letter-spacing:
+            -3px;
+
+        line-height:
+            0.94;
+    }
+
+
+    .contact-brand-content p {
+        margin-top:
+            25px;
+
+        font-size:
+            11px;
+
+        line-height:
+            1.7;
+    }
+
+
+    /* -----------------------------------------
+       PROGRESS
+    ----------------------------------------- */
+
+    .contact-progress {
+        position:
+            relative;
+
+        left:
+            auto;
+
+        bottom:
+            auto;
+
+        margin-top:
+            30px;
+
+        gap:
+            5px;
+    }
+
+
+    .progress-item {
+        width:
+            20px;
+    }
+
+
+    .progress-item.active {
+        width:
+            30px;
+    }
+
+
+    /* -----------------------------------------
+       RIGHT
+    ----------------------------------------- */
+
+    .contact-conversation {
+        min-height:
+            65svh;
+
+        padding:
+            60px 25px 80px;
+
+        align-items:
+            flex-start;
+
+        justify-content:
+            flex-start;
+
+        background:
+            #ffffff;
+    }
+
+
+    .conversation-step {
+        width:
+            100%;
+    }
+
+
+    .conversation-message {
+        margin-bottom:
+            18px;
+
+        font-size:
+            12px;
+
+        line-height:
+            1.6;
+    }
+
+
+    .conversation-step label {
+        margin-bottom:
+            25px;
+
+        font-size:
+            clamp(
+                34px,
+                10vw,
+                44px
+            );
+
+        letter-spacing:
+            -2px;
+
+        line-height:
+            1.02;
+    }
+
+
+    /* -----------------------------------------
+       INPUT
+    ----------------------------------------- */
+
+    .conversation-step input {
+        height:
+            58px;
+
+        font-size:
+            16px;
+
+        -webkit-appearance:
+            none;
+    }
+
+
+    /* -----------------------------------------
+       TEXTAREA
+    ----------------------------------------- */
+
+    .conversation-step textarea {
+        min-height:
+            145px;
+
+        font-size:
+            14px;
+
+        -webkit-appearance:
+            none;
+    }
+
+
+    /* -----------------------------------------
+       BUTTON
+    ----------------------------------------- */
+
+    .conversation-button {
+        width:
+            100%;
+
+        min-height:
+            56px;
+
+        height:
+            56px;
+
+        margin-top:
+            24px;
+
+        border-radius:
+            8px;
+
+        font-size:
+            9px;
+
+        -webkit-tap-highlight-color:
+            transparent;
+    }
+
+
+    /*
+       Remove hover movement on touch devices.
+    */
+
+    .conversation-button:hover {
+        transform:
+            none;
+
+        box-shadow:
+            none;
+    }
+
+
+    .conversation-button:active {
+        transform:
+            scale(0.98);
+    }
+
+
+    /* -----------------------------------------
+       SUCCESS
+    ----------------------------------------- */
+
+    .contact-success {
+        min-height:
+            100svh;
+    }
+
+
+    .contact-success h2 {
+        font-size:
+            clamp(
+                60px,
+                17vw,
+                90px
+            );
+
+        letter-spacing:
+            -4px;
+    }
+
+
+    .contact-success p {
+        font-size:
+            12px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .contact-brand {
+        padding:
+            50px 20px 35px;
+    }
+
+
+    .contact-main-heading {
+        font-size:
+            40px;
+    }
+
+
+    .contact-conversation {
+        padding:
+            50px 20px 70px;
+    }
+
+
+    .conversation-step label {
+        font-size:
+            32px;
+    }
+
+
+    .progress-item {
+        width:
+            16px;
+    }
+
+
+    .progress-item.active {
+        width:
+            25px;
+    }
+
+}

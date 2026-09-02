@@ -1,0 +1,265 @@
+/* =========================================================
+   ABOUT FINAL
+========================================================= */
+
+.about-final {
+    width: 100%;
+
+    height: 420px;
+    min-height: 420px;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 0.75fr;
+
+    background: #ffffff;
+
+    color: #111111;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.about-final-content {
+    padding:
+        75px 80px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    justify-content: center;
+}
+
+.about-final-content h2 {
+    margin: 0;
+
+    font-family:
+        "Times New Roman",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(
+            48px,
+            5.2vw,
+            76px
+        );
+
+    font-weight: 400;
+
+    line-height: 0.94;
+
+    letter-spacing: -4px;
+
+    color: #111111;
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.about-final-button {
+    margin-top: 35px;
+
+    padding:
+        18px 25px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 17px;
+
+    background: #111111;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.8px;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.about-final-button:hover {
+    transform:
+        translateY(-4px);
+
+    background: #292929;
+}
+
+.about-final-button span {
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.about-final-visual {
+    position: relative;
+
+    width: 100%;
+
+    height: 420px;
+
+    overflow: hidden;
+
+    background: #111111;
+}
+
+.about-final-image {
+    position: absolute;
+
+    width: 115%;
+    height: 115%;
+
+    max-width: none;
+    max-height: none;
+
+    top: 47%;
+    left: 50%;
+
+    display: block;
+
+    object-fit: cover;
+
+    object-position: center center;
+
+    margin: 0;
+    padding: 0;
+
+    transform:
+        translate(
+            -50%,
+            -50%
+        );
+
+    filter:
+        contrast(1.04);
+    transform-origin:
+        center center;
+}
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1150px) {
+
+    .about-final {
+        height: 400px;
+
+        min-height: 400px;
+
+        grid-template-columns:
+            1fr 0.7fr;
+    }
+
+    .about-final-content {
+        padding:
+            65px 55px;
+    }
+
+    .about-final-visual {
+        height: 400px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 760px) {
+
+    .about-final {
+        height: auto;
+        min-height: auto;
+
+        grid-template-columns: 1fr;
+    }
+
+    .about-final-content {
+        min-height: 330px;
+
+        padding:
+            70px 25px;
+
+        align-items: center;
+
+        text-align: center;
+    }
+
+    .about-final-content h2 {
+        font-size:
+            clamp(
+                43px,
+                11vw,
+                60px
+            );
+
+        letter-spacing:
+            -2.5px;
+    }
+
+    .about-final-button {
+        margin-top: 30px;
+    }
+
+    .about-final-visual {
+        width: 100%;
+
+        height: 300px;
+    }
+
+    .about-final-image {
+        width: 115%;
+        height: 115%;
+
+        top: 47%;
+        left: 50%;
+
+        object-fit: cover;
+
+        transform:
+            translate(
+                -50%,
+                -50%
+            );
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+    .about-final-visual {
+        height: 270px;
+    }
+
+}

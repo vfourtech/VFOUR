@@ -1,0 +1,1347 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap");
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.employee-dashboard-page {
+    min-height: 100vh;
+    width: 100%;
+
+    display: flex;
+
+    background: #f5f5f3;
+    color: #171717;
+
+    font-family: "DM Sans", Arial, sans-serif;
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.employee-dashboard-loading {
+    min-height: 100vh;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f5f5f3;
+}
+
+.employee-dashboard-loading-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 18px;
+}
+
+.employee-dashboard-loading-logo {
+    color: #171717;
+
+    font-size: 34px;
+    font-weight: 700;
+
+    letter-spacing: -1.5px;
+}
+
+.employee-dashboard-loading-box span {
+    color: #898989;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
+}
+
+
+/* =========================================================
+   BLACK SIDEBAR
+========================================================= */
+
+.employee-sidebar {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    bottom: 0;
+
+    width: 255px;
+
+    padding: 34px 24px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    background: #0b0b0b;
+
+    color: #ffffff;
+
+    border-right: 1px solid #202020;
+
+    z-index: 20;
+}
+
+.employee-sidebar-top {
+    width: 100%;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.employee-logo {
+    color: #ffffff;
+
+    font-size: 34px;
+    font-weight: 700;
+
+    line-height: 1;
+
+    letter-spacing: -1.7px;
+}
+
+.employee-sidebar-caption {
+    margin-top: 11px;
+
+    color: #777777;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 1.6px;
+}
+
+
+/* =========================================================
+   SIDEBAR NAV
+========================================================= */
+
+.employee-sidebar-nav {
+    margin-top: 62px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.employee-nav-item {
+    width: 100%;
+
+    min-height: 54px;
+
+    padding: 0 17px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+
+    border: 1px solid transparent;
+
+    border-radius: 4px;
+
+    background: transparent;
+
+    color: #858585;
+
+    font-family: "DM Sans", Arial, sans-serif;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    letter-spacing: 0.7px;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        color 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.employee-nav-item:hover {
+    color: #ffffff;
+
+    background: #171717;
+
+    border-color: #292929;
+}
+
+.employee-nav-item.active {
+    color: #ffffff;
+
+    background: #242424;
+
+    border-color: #343434;
+}
+
+
+/* =========================================================
+   SIDEBAR USER
+========================================================= */
+
+.employee-sidebar-bottom {
+    width: 100%;
+}
+
+.employee-user {
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    padding-bottom: 20px;
+
+    border-bottom: 1px solid #292929;
+}
+
+.employee-user-avatar {
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    color: #111111;
+
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.employee-user-info {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.employee-user-info strong {
+    max-width: 165px;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.employee-user-info span {
+    margin-top: 4px;
+
+    color: #707070;
+
+    font-size: 11px;
+
+    font-weight: 500;
+
+    letter-spacing: 0.8px;
+}
+
+
+/* =========================================================
+   LOGOUT
+========================================================= */
+
+.employee-logout {
+    width: 100%;
+
+    margin-top: 15px;
+
+    padding: 11px 4px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border: 0;
+
+    background: transparent;
+
+    color: #707070;
+
+    font-family: "DM Sans", Arial, sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition: color 0.2s ease;
+}
+
+.employee-logout:hover {
+    color: #ffffff;
+}
+
+.employee-logout span:last-child {
+    font-size: 19px;
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.employee-main {
+    width: calc(100% - 255px);
+
+    margin-left: 255px;
+
+    min-width: 0;
+
+    padding: 48px 58px 85px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.employee-header {
+    padding-bottom: 34px;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 35px;
+
+    border-bottom: 1px solid #ddddda;
+}
+
+.employee-header-label {
+    display: block;
+
+    margin-bottom: 14px;
+
+    color: #979797;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: 1.3px;
+}
+
+.employee-header h1 {
+    margin: 0;
+
+    color: #171717;
+
+    font-size: 52px;
+
+    line-height: 1.05;
+
+    font-weight: 400;
+
+    letter-spacing: -2px;
+}
+
+.employee-header h1 span {
+    font-weight: 700;
+}
+
+.employee-header-right {
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-end;
+
+    gap: 6px;
+}
+
+.employee-header-right span {
+    color: #999999;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.2px;
+}
+
+.employee-header-right strong {
+    color: #555555;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    text-align: right;
+}
+
+
+/* =========================================================
+   ALERT
+========================================================= */
+
+.employee-alert {
+    margin-top: 20px;
+
+    min-height: 54px;
+
+    padding: 0 17px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    border: 1px solid #dcdcd8;
+
+    background: #ffffff;
+
+    color: #444444;
+
+    font-size: 13px;
+
+    font-weight: 500;
+}
+
+.employee-alert-icon {
+    width: 22px;
+    height: 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border: 1px solid #171717;
+
+    border-radius: 50%;
+
+    color: #171717;
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+.employee-alert button {
+    margin-left: auto;
+
+    padding: 0;
+
+    border: 0;
+
+    background: transparent;
+
+    color: #999999;
+
+    font-size: 24px;
+
+    line-height: 1;
+
+    cursor: pointer;
+}
+
+.employee-alert button:hover {
+    color: #171717;
+}
+
+
+/* =========================================================
+   WEEKEND BANNER
+========================================================= */
+
+.employee-weekend-banner {
+    margin-top: 20px;
+
+    padding: 23px 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    border: 1px solid #ddddda;
+
+    background: #ecece9;
+}
+
+.employee-weekend-banner span {
+    color: #999999;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.2px;
+}
+
+.employee-weekend-banner h2 {
+    margin: 7px 0 0;
+
+    color: #222222;
+
+    font-size: 20px;
+
+    line-height: 1.2;
+
+    font-weight: 600;
+
+    letter-spacing: -0.4px;
+}
+
+.employee-weekend-banner p {
+    max-width: 310px;
+
+    margin: 0;
+
+    color: #777777;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+    text-align: right;
+}
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.employee-section {
+    margin-top: 48px;
+}
+
+.employee-section-title {
+    margin-bottom: 16px;
+
+    display: flex;
+    align-items: center;
+}
+
+.employee-section-title h2 {
+    margin: 0;
+
+    color: #454545;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.2px;
+}
+
+
+/* =========================================================
+   TODAY'S ATTENDANCE
+========================================================= */
+
+.employee-today-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    border: 1px solid #dcdcd8;
+
+    background: #ffffff;
+}
+
+.employee-info-card {
+    min-height: 160px;
+
+    padding: 23px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    border-right: 1px solid #e7e7e3;
+}
+
+.employee-info-card:nth-child(3) {
+    border-right: 1px solid #e7e7e3;
+}
+
+.employee-card-label {
+    color: #999999;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.1px;
+}
+
+.employee-card-value {
+    color: #171717;
+
+    font-size: 34px;
+
+    line-height: 1;
+
+    font-weight: 600;
+
+    letter-spacing: -1px;
+}
+
+.employee-card-note {
+    color: #b0b0ad;
+
+    font-size: 9px;
+
+    font-weight: 500;
+
+    letter-spacing: 0.8px;
+}
+
+
+/* =========================================================
+   ACTION CARD
+========================================================= */
+
+.employee-action-card {
+    min-height: 160px;
+
+    background: #171717;
+}
+
+.employee-attendance-button {
+    width: 100%;
+    height: 100%;
+
+    min-height: 160px;
+
+    padding: 23px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    border: 0;
+
+    background: #171717;
+
+    color: #ffffff;
+
+    font-family: "DM Sans", Arial, sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.2px;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition: background 0.2s ease;
+}
+
+.employee-attendance-button:hover:not(:disabled) {
+    background: #2b2b2b;
+}
+
+.employee-attendance-button:disabled {
+    cursor: wait;
+
+    opacity: 0.6;
+}
+
+.employee-button-arrow {
+    font-size: 25px;
+
+    font-weight: 400;
+}
+
+
+/* =========================================================
+   ATTENDANCE COMPLETED
+========================================================= */
+
+.employee-attendance-complete {
+    min-height: 160px;
+
+    padding: 23px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    background: #e9e9e6;
+}
+
+.employee-attendance-complete span {
+    max-width: 150px;
+
+    color: #666666;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    line-height: 1.4;
+
+    letter-spacing: 0.9px;
+}
+
+.employee-attendance-complete strong {
+    color: #222222;
+
+    font-size: 27px;
+
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   WEEKEND ACTION
+========================================================= */
+
+.employee-weekend-action {
+    min-height: 160px;
+
+    padding: 23px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: flex-end;
+
+    gap: 7px;
+
+    background: #ededeb;
+}
+
+.employee-weekend-action span {
+    color: #999999;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+}
+
+.employee-weekend-action strong {
+    color: #292929;
+
+    font-size: 18px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   ATTENDANCE RULES
+========================================================= */
+
+.employee-rules-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    border: 1px solid #dcdcd8;
+
+    background: #ffffff;
+}
+
+.employee-rule-card {
+    min-height: 155px;
+
+    padding: 22px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+
+    border-right: 1px solid #e7e7e3;
+}
+
+.employee-rule-card:last-child {
+    border-right: 0;
+}
+
+.employee-rule-card > span {
+    color: #999999;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+.employee-rule-card strong {
+    margin-top: auto;
+
+    color: #222222;
+
+    font-size: 20px;
+
+    line-height: 1.2;
+
+    font-weight: 600;
+
+    letter-spacing: -0.3px;
+}
+
+.employee-rule-card p {
+    margin: 9px 0 0;
+
+    color: #888888;
+
+    font-size: 12px;
+
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   ATTENDANCE OVERVIEW
+========================================================= */
+
+.employee-overview-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    border: 1px solid #dcdcd8;
+
+    background: #ffffff;
+}
+
+.employee-overview-card {
+    min-height: 135px;
+
+    padding: 22px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    border-right: 1px solid #e7e7e3;
+}
+
+.employee-overview-card:last-child {
+    border-right: 0;
+}
+
+.employee-overview-card span {
+    color: #999999;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+.employee-overview-card strong {
+    color: #171717;
+
+    font-size: 40px;
+
+    line-height: 1;
+
+    font-weight: 600;
+
+    letter-spacing: -1px;
+}
+
+
+/* =========================================================
+   OVERVIEW COLORS
+   Existing color system retained
+========================================================= */
+
+.employee-overview-card:nth-child(1) strong {
+    color: #35583a;
+}
+
+.employee-overview-card:nth-child(2) strong {
+    color: #6b633c;
+}
+
+.employee-overview-card:nth-child(3) strong {
+    color: #555555;
+}
+
+.employee-overview-card:nth-child(4) strong {
+    color: #4c5668;
+}
+
+
+/* =========================================================
+   HISTORY
+========================================================= */
+
+.employee-history {
+    width: 100%;
+
+    border: 1px solid #dcdcd8;
+
+    background: #ffffff;
+
+    overflow-x: auto;
+}
+
+.employee-history-header,
+.employee-history-row {
+    display: grid;
+
+    grid-template-columns:
+        1.3fr
+        1fr
+        1fr
+        1fr
+        0.9fr;
+
+    min-width: 780px;
+
+    column-gap: 24px;
+
+    align-items: center;
+}
+
+.employee-history-header {
+    min-height: 50px;
+
+    padding: 0 22px;
+
+    box-sizing: border-box;
+
+    border-bottom: 1px solid #e6e6e3;
+
+    background: #fafaf9;
+
+    color: #999999;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+.employee-history-row {
+    min-height: 68px;
+
+    padding: 0 22px;
+
+    box-sizing: border-box;
+
+    border-bottom: 1px solid #eeeeeb;
+
+    color: #4d4d4d;
+
+    font-size: 13px;
+
+    font-weight: 500;
+}
+
+.employee-history-row:last-child {
+    border-bottom: 0;
+}
+
+.employee-history-row:hover {
+    background: #fafaf9;
+}
+
+.employee-history-empty {
+    min-height: 145px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #999999;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: 1.1px;
+}
+
+
+/* =========================================================
+   STATUS
+   Existing status colors retained
+========================================================= */
+
+.employee-status {
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 7px 11px;
+
+    border-radius: 3px;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.7px;
+
+    text-transform: uppercase;
+
+    background: #eeeeeb;
+
+    color: #666666;
+}
+
+
+/* PRESENT - GREEN */
+
+.employee-status-present {
+    background: #e4eee5;
+
+    color: #35583a;
+}
+
+
+/* HALF DAY - EXISTING COLOR */
+
+.employee-status-half-day {
+    background: #efeee4;
+
+    color: #6b633c;
+}
+
+
+/* LATE - EXISTING COLOR */
+
+.employee-status-late {
+    background: #efeee4;
+
+    color: #6b633c;
+}
+
+
+/* ABSENT - EXISTING COLOR */
+
+.employee-status-absent {
+    background: #eeeeeb;
+
+    color: #555555;
+}
+
+
+/* LEAVE - EXISTING COLOR */
+
+.employee-status-leave {
+    background: #e7e9ed;
+
+    color: #4c5668;
+}
+
+
+/* =========================================================
+   CONFIRMATION MODAL
+========================================================= */
+
+.employee-modal-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+
+    box-sizing: border-box;
+
+    background: rgba(0, 0, 0, 0.35);
+
+    backdrop-filter: blur(2px);
+}
+
+.employee-confirm-modal {
+    width: 100%;
+
+    max-width: 500px;
+
+    background: #ffffff;
+
+    border: 1px solid #d8d8d4;
+
+    box-shadow:
+        0 18px 55px rgba(0, 0, 0, 0.14);
+}
+
+
+/* =========================================================
+   MODAL TOP
+========================================================= */
+
+.employee-modal-top {
+    min-height: 56px;
+
+    padding: 0 23px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid #e5e5e2;
+}
+
+.employee-modal-top > span {
+    color: #999999;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.2px;
+}
+
+.employee-modal-close {
+    width: 32px;
+    height: 32px;
+
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 0;
+
+    background: transparent;
+
+    color: #777777;
+
+    font-size: 24px;
+
+    line-height: 1;
+
+    cursor: pointer;
+}
+
+.employee-modal-close:hover:not(:disabled) {
+    color: #171717;
+}
+
+
+/* =========================================================
+   MODAL CONTENT
+========================================================= */
+
+.employee-modal-content {
+    padding: 36px 30px 30px;
+}
+
+.employee-modal-label {
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: #999999;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.2px;
+}
+
+.employee-modal-content h2 {
+    margin: 0;
+
+    color: #171717;
+
+    font-size: 36px;
+
+    line-height: 1;
+
+    font-weight: 600;
+
+    letter-spacing: -1.2px;
+}
+
+.employee-modal-content p {
+    margin: 14px 0 24px;
+
+    color: #777777;
+
+    font-size: 13px;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   MODAL TIME
+========================================================= */
+
+.employee-modal-time {
+    padding: 16px 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 24px;
+
+    background: #f5f5f3;
+
+    border: 1px solid #e4e4e1;
+}
+
+.employee-modal-time > div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 6px;
+}
+
+.employee-modal-time span {
+    color: #999999;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+.employee-modal-time strong {
+    color: #222222;
+
+    font-size: 19px;
+
+    font-weight: 600;
+
+    letter-spacing: -0.2px;
+}
+
+
+/* =========================================================
+   MODAL ACTIONS
+========================================================= */
+
+.employee-modal-actions {
+    padding: 0 30px 30px;
+
+    display: grid;
+
+    grid-template-columns: 0.8fr 1.5fr;
+
+    gap: 12px;
+}
+
+.employee-modal-cancel,
+.employee-modal-confirm {
+    min-height: 56px;
+
+    padding: 0 17px;
+
+    box-sizing: border-box;
+
+    font-family: "DM Sans", Arial, sans-serif;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+}
+
+.employee-modal-cancel {
+    border: 1px solid #d7d7d3;
+
+    background: #ffffff;
+
+    color: #666666;
+}
+
+.employee-modal-cancel:hover:not(:disabled) {
+    border-color: #171717;
+
+    color: #171717;
+}
+
+.employee-modal-confirm {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    border: 1px solid #171717;
+
+    background: #171717;
+
+    color: #ffffff;
+}
+
+.employee-modal-confirm:hover:not(:disabled) {
+    background: #2a2a2a;
+}
+
+.employee-modal-confirm > span:last-child {
+    font-size: 20px;
+
+    font-weight: 400;
+}
+
+.employee-modal-cancel:disabled,
+.employee-modal-confirm:disabled,
+.employee-modal-close:disabled {
+    cursor: not-allowed;
+
+    opacity: 0.45;
+}

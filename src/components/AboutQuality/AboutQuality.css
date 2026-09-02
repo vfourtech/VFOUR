@@ -1,0 +1,241 @@
+/* =========================================================
+   ABOUT QUALITY
+========================================================= */
+
+.about-quality {
+    width: 100%;
+
+    height: 480px;
+    min-height: 480px;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    background: #050505;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.about-quality-visual {
+    position: relative;
+
+    width: 100%;
+    height: 480px;
+
+    overflow: hidden;
+
+    background: #050505;
+}
+
+.about-quality-image {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    object-position:
+        center 42%;
+
+    transform: none;
+
+    filter:
+        contrast(1.05);
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.about-quality-content {
+    padding:
+        70px 78px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    justify-content: center;
+}
+
+
+.about-quality-content h2 {
+    margin: 0;
+
+    font-family:
+        "Times New Roman",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(
+            48px,
+            4.8vw,
+            75px
+        );
+
+    font-weight: 400;
+
+    line-height: 0.95;
+
+    letter-spacing: -4px;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   LINE
+========================================================= */
+
+.about-quality-line {
+    width: 48px;
+
+    height: 1px;
+
+    margin:
+        30px 0;
+
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.about-quality-content p {
+    margin: 0;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    line-height: 1.8;
+
+    letter-spacing: 1.6px;
+
+    color: #999999;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1150px) {
+
+    .about-quality {
+        height: 460px;
+        min-height: 460px;
+    }
+
+    .about-quality-visual {
+        height: 460px;
+    }
+
+    .about-quality-content {
+        padding:
+            60px 55px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 760px) {
+
+    .about-quality {
+        height: auto;
+        min-height: auto;
+
+        grid-template-columns: 1fr;
+    }
+
+    .about-quality-visual {
+        width: 100%;
+
+        height: 420px;
+    }
+
+    .about-quality-image {
+        object-fit: cover;
+
+        object-position:
+            center 42%;
+    }
+
+    .about-quality-content {
+        min-height: 320px;
+
+        padding:
+            65px 25px
+            75px;
+
+        align-items: center;
+
+        text-align: center;
+    }
+
+    .about-quality-content h2 {
+        font-size:
+            clamp(
+                43px,
+                11vw,
+                60px
+            );
+
+        letter-spacing:
+            -2.5px;
+    }
+
+    .about-quality-line {
+        margin:
+            25px auto;
+    }
+
+    .about-quality-content p {
+        font-size: 8px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+    .about-quality-visual {
+        height: 330px;
+    }
+
+    .about-quality-content {
+        min-height: 300px;
+    }
+
+}

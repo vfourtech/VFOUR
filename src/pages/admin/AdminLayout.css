@@ -1,0 +1,67 @@
+.admin-layout {
+    min-height: 100vh;
+
+    background:
+        #050505;
+}
+
+
+.admin-layout-content {
+    min-height: 100vh;
+
+    margin-left:
+        235px;
+}
+
+
+.admin-auth-check {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        #050505;
+}
+
+
+.admin-auth-spinner {
+    width: 22px;
+    height: 22px;
+
+    border:
+        2px solid
+        rgba(255,255,255,0.08);
+
+    border-top-color:
+        #60a5fa;
+
+    border-radius:
+        50%;
+
+    animation:
+        adminAuthSpin
+        0.7s
+        linear
+        infinite;
+}
+
+
+@keyframes adminAuthSpin {
+
+    to {
+        transform:
+            rotate(360deg);
+    }
+}
+
+
+@media (max-width: 900px) {
+
+    .admin-layout-content {
+        margin-left:
+            0;
+    }
+}

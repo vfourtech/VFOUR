@@ -1,0 +1,1607 @@
+/* =========================================================
+   VFOUR ADMIN - TESTIMONIALS
+   OUR WORKS / PROJECTS THEME
+========================================================= */
+
+.admin-testimonials {
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+
+    background: #f7f7f5;
+
+    color: #111111;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+}
+
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.testimonials-background {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+}
+
+
+.testimonials-grid {
+    display: none;
+}
+
+
+.testimonials-glow {
+    display: none;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.testimonials-container {
+    position: relative;
+
+    z-index: 2;
+
+    width:
+        min(
+            1400px,
+            calc(100% - 80px)
+        );
+
+    margin: 0 auto;
+
+    padding:
+        55px 0 70px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.testimonials-header {
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    margin-bottom: 38px;
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.testimonials-eyebrow {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: #777777;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.testimonials-header h1 {
+    margin: 0;
+
+    color: #111111;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(
+            40px,
+            5vw,
+            60px
+        );
+
+    font-weight: 400;
+
+    line-height: 0.95;
+
+    letter-spacing: -2.5px;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.testimonials-header p {
+    max-width: 500px;
+
+    margin:
+        12px 0 0;
+
+    color: #777777;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   ADD TESTIMONIAL BUTTON
+========================================================= */
+
+.add-testimonial-button {
+    height: 52px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 11px;
+
+    flex-shrink: 0;
+
+    padding:
+        0 22px;
+
+    border:
+        1px solid
+        #111111;
+
+    border-radius: 28px;
+
+    background: #111111;
+
+    color: #ffffff;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.8px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        background-color 0.25s ease;
+}
+
+
+.add-testimonial-button span {
+    font-size: 18px;
+
+    font-weight: 300;
+
+    line-height: 1;
+}
+
+
+.add-testimonial-button:hover {
+    transform:
+        translateY(-2px);
+
+    background: #222222;
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.testimonials-error,
+.modal-error {
+    margin-bottom: 18px;
+
+    padding:
+        14px 16px;
+
+    border:
+        1px solid
+        #e5b5b5;
+
+    border-radius: 10px;
+
+    background: #fff4f4;
+
+    color: #9f2525;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   TABLE CARD
+========================================================= */
+
+.testimonials-table-card {
+    width: 100%;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(
+            0,
+            0,
+            0,
+            0.08
+        );
+
+    border-radius: 18px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 8px 35px
+        rgba(
+            0,
+            0,
+            0,
+            0.045
+        );
+}
+
+
+/* =========================================================
+   TABLE WRAPPER
+========================================================= */
+
+.testimonials-table-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.testimonials-table-card table {
+    width: 100%;
+
+    min-width: 800px;
+
+    border-collapse: collapse;
+}
+
+
+/* =========================================================
+   TABLE HEADER
+========================================================= */
+
+.testimonials-table-card th {
+    padding:
+        18px 20px;
+
+    border-bottom:
+        1px solid
+        rgba(
+            0,
+            0,
+            0,
+            0.08
+        );
+
+    color: #888888;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.8px;
+
+    text-align: left;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   TABLE BODY
+========================================================= */
+
+.testimonials-table-card td {
+    padding:
+        17px 20px;
+
+    border-bottom:
+        1px solid
+        rgba(
+            0,
+            0,
+            0,
+            0.055
+        );
+
+    vertical-align: middle;
+
+    color: #333333;
+
+    font-size: 11px;
+}
+
+
+.testimonials-table-card tbody tr {
+    transition:
+        background-color 0.2s ease;
+}
+
+
+.testimonials-table-card tbody tr:hover {
+    background: #fafafa;
+}
+
+
+.testimonials-table-card tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* =========================================================
+   IMAGE PREVIEW
+========================================================= */
+
+.feedback-preview {
+    display: block;
+
+    width: 120px;
+    height: 68px;
+
+    object-fit: cover;
+
+    border:
+        1px solid
+        rgba(
+            0,
+            0,
+            0,
+            0.10
+        );
+
+    border-radius: 8px;
+
+    background: #f3f3f1;
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease;
+}
+
+
+.feedback-preview:hover {
+    transform:
+        scale(1.03);
+
+    border-color: #111111;
+}
+
+
+/* =========================================================
+   ORDER
+========================================================= */
+
+.order-number {
+    color: #111111;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.status-toggle,
+.modal-status-toggle {
+    min-width: 95px;
+
+    height: 34px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    padding:
+        0 12px;
+
+    border: 0;
+
+    border-radius: 20px;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+
+.status-toggle span,
+.modal-status-toggle span {
+    width: 6px;
+    height: 6px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+}
+
+
+/* =========================================================
+   ACTIVE
+========================================================= */
+
+.status-toggle.active,
+.modal-status-toggle.active {
+    background: #edf8f0;
+
+    color: #28733c;
+}
+
+
+.status-toggle.active span,
+.modal-status-toggle.active span {
+    background: #38a957;
+
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   INACTIVE
+========================================================= */
+
+.status-toggle.inactive,
+.modal-status-toggle.inactive {
+    background: #f1f1f1;
+
+    color: #777777;
+}
+
+
+.status-toggle.inactive span,
+.modal-status-toggle.inactive span {
+    background: #999999;
+}
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.testimonial-actions {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+}
+
+
+.edit-button,
+.delete-button {
+    height: 32px;
+
+    padding:
+        0 11px;
+
+    border-radius: 7px;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.8px;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+/* =========================================================
+   EDIT
+========================================================= */
+
+.edit-button {
+    border:
+        1px solid
+        rgba(
+            0,
+            0,
+            0,
+            0.12
+        );
+
+    background: #ffffff;
+
+    color: #333333;
+}
+
+
+.edit-button:hover {
+    background: #111111;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   DELETE
+========================================================= */
+
+.delete-button {
+    border:
+        1px solid
+        #efd0d0;
+
+    background: #fff7f7;
+
+    color: #a52a2a;
+}
+
+
+.delete-button:hover {
+    background: #a52a2a;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.testimonials-loading {
+    min-height: 350px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    color: #777777;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+.testimonial-spinner {
+    width: 22px;
+    height: 22px;
+
+    border:
+        2px solid
+        #dddddd;
+
+    border-top-color:
+        #111111;
+
+    border-radius: 50%;
+
+    animation:
+        testimonialSpin
+        0.7s
+        linear
+        infinite;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.testimonials-empty {
+    min-height: 350px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 40px;
+
+    text-align: center;
+}
+
+
+.empty-icon {
+    width: 62px;
+    height: 62px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 18px;
+
+    border:
+        1px solid
+        rgba(
+            0,
+            0,
+            0,
+            0.10
+        );
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    color: #111111;
+
+    font-size: 25px;
+}
+
+
+.testimonials-empty h2 {
+    margin: 0;
+
+    color: #111111;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 27px;
+
+    font-weight: 400;
+}
+
+
+.testimonials-empty p {
+    max-width: 350px;
+
+    margin:
+        10px 0 22px;
+
+    color: #888888;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+}
+
+
+.testimonials-empty button {
+    height: 43px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    padding:
+        0 20px;
+
+    border: 0;
+
+    border-radius: 24px;
+
+    background: #111111;
+
+    color: #ffffff;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.testimonials-empty button:hover {
+    transform:
+        translateY(-1px);
+
+    background: #222222;
+}
+
+
+/* =========================================================
+   MODAL OVERLAY
+========================================================= */
+
+.testimonial-modal-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 25px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.72
+        );
+
+    backdrop-filter:
+        blur(12px);
+
+    -webkit-backdrop-filter:
+        blur(12px);
+
+    animation:
+        modalOverlayIn
+        0.25s
+        ease
+        both;
+}
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.testimonial-modal {
+    width:
+        min(
+            700px,
+            100%
+        );
+
+    max-height:
+        calc(
+            100vh - 50px
+        );
+
+    overflow-y: auto;
+
+    padding: 32px;
+
+    box-sizing: border-box;
+
+    border:
+        1px solid
+        rgba(
+            0,
+            0,
+            0,
+            0.10
+        );
+
+    border-radius: 20px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 30px 90px
+        rgba(
+            0,
+            0,
+            0,
+            0.15
+        );
+
+    animation:
+        modalIn
+        0.35s
+        cubic-bezier(
+            .16,
+            1,
+            .3,
+            1
+        )
+        both;
+}
+
+
+/* =========================================================
+   MODAL HEADER
+========================================================= */
+
+.testimonial-modal-header {
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 27px;
+}
+
+
+.testimonial-modal-header span {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #888888;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 2.2px;
+}
+
+
+.testimonial-modal-header h2 {
+    margin: 0;
+
+    color: #111111;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 31px;
+
+    font-weight: 400;
+
+    letter-spacing: -0.8px;
+}
+
+
+/* =========================================================
+   MODAL CLOSE
+========================================================= */
+
+.modal-close {
+    width: 40px;
+    height: 40px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border:
+        1px solid
+        rgba(
+            0,
+            0,
+            0,
+            0.10
+        );
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    color: #111111;
+
+    font-size: 22px;
+
+    font-weight: 300;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        background-color 0.25s ease;
+}
+
+
+.modal-close:hover {
+    transform:
+        rotate(90deg);
+
+    background: #f3f3f3;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.testimonial-form {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 22px;
+}
+
+
+/* =========================================================
+   IMAGE UPLOAD
+========================================================= */
+
+.image-upload-section {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 9px;
+}
+
+
+.image-upload-section > label:first-child,
+.testimonial-field > label {
+    color: #555555;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+
+/* =========================================================
+   UPLOAD BOX
+========================================================= */
+
+.feedback-upload-box {
+    position: relative;
+
+    width: 100%;
+
+    min-height: 260px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+    border:
+        1px dashed
+        rgba(
+            0,
+            0,
+            0,
+            0.18
+        );
+
+    border-radius: 13px;
+
+    background: #fafafa;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.2s ease,
+        background-color 0.2s ease;
+}
+
+
+.feedback-upload-box:hover {
+    border-color: #111111;
+
+    background: #f5f5f3;
+}
+
+
+.feedback-upload-box img {
+    display: block;
+
+    width: 100%;
+
+    max-height: 400px;
+
+    object-fit: contain;
+}
+
+
+.feedback-upload-box input {
+    display: none;
+}
+
+
+/* =========================================================
+   UPLOAD PLACEHOLDER
+========================================================= */
+
+.upload-placeholder {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 9px;
+
+    color: #999999;
+}
+
+
+.upload-placeholder span {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border:
+        1px solid
+        rgba(
+            0,
+            0,
+            0,
+            0.12
+        );
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    color: #111111;
+
+    font-size: 19px;
+}
+
+
+.upload-placeholder small {
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   FORM ROW
+========================================================= */
+
+.testimonial-form-row {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 16px;
+}
+
+
+/* =========================================================
+   FIELD
+========================================================= */
+
+.testimonial-field {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 9px;
+}
+
+
+.testimonial-field input {
+    width: 100%;
+
+    height: 46px;
+
+    box-sizing: border-box;
+
+    padding:
+        0 14px;
+
+    border:
+        1px solid
+        rgba(
+            0,
+            0,
+            0,
+            0.12
+        );
+
+    border-radius: 9px;
+
+    outline: none;
+
+    background: #ffffff;
+
+    color: #111111;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 12px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.testimonial-field input:focus {
+    border-color: #111111;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(
+            0,
+            0,
+            0,
+            0.045
+        );
+}
+
+
+.testimonial-field input::placeholder {
+    color: #aaaaaa;
+}
+
+
+/* =========================================================
+   MODAL STATUS
+========================================================= */
+
+.modal-status-toggle {
+    width: 100%;
+
+    height: 46px;
+}
+
+
+/* =========================================================
+   MODAL ACTIONS
+========================================================= */
+
+.testimonial-modal-actions {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    padding-top: 20px;
+
+    border-top:
+        1px solid
+        rgba(
+            0,
+            0,
+            0,
+            0.07
+        );
+}
+
+
+/* =========================================================
+   CANCEL
+========================================================= */
+
+.modal-cancel,
+.modal-save {
+    height: 45px;
+
+    padding:
+        0 20px;
+
+    border-radius: 25px;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.4px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease;
+}
+
+
+.modal-cancel {
+    border:
+        1px solid
+        rgba(
+            0,
+            0,
+            0,
+            0.12
+        );
+
+    background: #ffffff;
+
+    color: #555555;
+}
+
+
+.modal-cancel:hover {
+    transform:
+        translateY(-1px);
+
+    background: #f5f5f5;
+}
+
+
+/* =========================================================
+   SAVE
+========================================================= */
+
+.modal-save {
+    border:
+        1px solid
+        #111111;
+
+    background: #111111;
+
+    color: #ffffff;
+}
+
+
+.modal-save:hover {
+    transform:
+        translateY(-1px);
+
+    background: #222222;
+}
+
+
+.modal-save:disabled {
+    opacity: 0.5;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes testimonialSpin {
+
+    to {
+        transform:
+            rotate(360deg);
+    }
+}
+
+
+@keyframes modalOverlayIn {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+@keyframes modalIn {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(20px)
+            scale(.97);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .testimonials-container {
+        width:
+            calc(
+                100% - 50px
+            );
+
+        padding:
+            45px 0 60px;
+    }
+
+    .testimonials-header {
+        align-items:
+            flex-start;
+    }
+
+    .testimonials-table-card table {
+        min-width: 750px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .testimonials-container {
+        width:
+            calc(
+                100% - 30px
+            );
+
+        padding:
+            32px 0 45px;
+    }
+
+
+    .testimonials-header {
+        align-items:
+            stretch;
+
+        flex-direction:
+            column;
+
+        gap: 20px;
+
+        margin-bottom: 28px;
+    }
+
+
+    .testimonials-header h1 {
+        font-size: 40px;
+
+        letter-spacing:
+            -1.8px;
+    }
+
+
+    .testimonials-header p {
+        font-size: 11px;
+    }
+
+
+    .add-testimonial-button {
+        width: 100%;
+    }
+
+
+    .testimonials-table-card {
+        border-radius: 14px;
+    }
+
+
+    .feedback-preview {
+        width: 90px;
+        height: 55px;
+    }
+
+
+    /* =====================================================
+       MODAL
+    ===================================================== */
+
+    .testimonial-modal-overlay {
+        align-items: center;
+
+        padding: 12px;
+    }
+
+
+    .testimonial-modal {
+        width: 100%;
+
+        max-height:
+            calc(
+                100vh - 24px
+            );
+
+        padding:
+            24px 18px;
+
+        border-radius: 17px;
+    }
+
+
+    .testimonial-modal-header {
+        margin-bottom: 22px;
+    }
+
+
+    .testimonial-modal-header h2 {
+        font-size: 28px;
+    }
+
+
+    .testimonial-form {
+        gap: 18px;
+    }
+
+
+    .testimonial-form-row {
+        grid-template-columns: 1fr;
+    }
+
+
+    .feedback-upload-box {
+        min-height: 210px;
+    }
+
+
+    .testimonial-modal-actions {
+        flex-direction:
+            column-reverse;
+    }
+
+
+    .modal-cancel,
+    .modal-save {
+        width: 100%;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .testimonials-container {
+        width:
+            calc(
+                100% - 22px
+            );
+
+        padding:
+            25px 0 40px;
+    }
+
+
+    .testimonials-header h1 {
+        font-size: 36px;
+    }
+
+
+    .testimonial-modal {
+        padding:
+            21px 15px;
+    }
+
+
+    .testimonial-modal-header h2 {
+        font-size: 25px;
+    }
+
+
+    .feedback-upload-box {
+        min-height: 180px;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .admin-testimonials *,
+    .admin-testimonials *::before,
+    .admin-testimonials *::after {
+        animation: none !important;
+
+        transition: none !important;
+    }
+}

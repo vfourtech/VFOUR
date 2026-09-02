@@ -1,0 +1,113 @@
+.admin-auth-check {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #050505;
+
+    color: #ffffff;
+}
+
+
+.admin-auth-content {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 14px;
+}
+
+
+.admin-auth-logo {
+    margin-bottom: 8px;
+
+    font-family:
+        "Inter",
+        Arial,
+        sans-serif;
+
+    font-size: 25px;
+
+    font-weight: 700;
+
+    letter-spacing: -1.5px;
+
+    color: #ffffff;
+
+    animation:
+        adminLogoPulse
+        2s
+        ease-in-out
+        infinite;
+}
+
+
+.admin-auth-spinner {
+    width: 20px;
+
+    height: 20px;
+
+    border:
+        2px solid
+        rgba(255, 255, 255, 0.08);
+
+    border-top-color:
+        #60a5fa;
+
+    border-radius: 50%;
+
+    animation:
+        adminAuthSpin
+        0.7s
+        linear
+        infinite;
+}
+
+
+.admin-auth-content span {
+    color: #4d4d4d;
+
+    font-family:
+        "Inter",
+        Arial,
+        sans-serif;
+
+    font-size: 6px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+}
+
+
+@keyframes adminAuthSpin {
+
+    to {
+        transform:
+            rotate(360deg);
+    }
+}
+
+
+@keyframes adminLogoPulse {
+
+    0%,
+    100% {
+        opacity: 0.55;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}

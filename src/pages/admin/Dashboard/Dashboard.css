@@ -1,0 +1,1344 @@
+/* =========================================================
+   VFOUR ADMIN - DASHBOARD
+   MATCHED WITH PROJECTS / OUR WORKS THEME
+========================================================= */
+
+.admin-dashboard {
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+
+    background: #f7f7f5;
+
+    color: #111111;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+}
+
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.dashboard-background {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+}
+
+
+.dashboard-grid {
+    display: none;
+}
+
+
+.dashboard-glow,
+.dashboard-glow-a,
+.dashboard-glow-b {
+    display: none;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.dashboard-container {
+    position: relative;
+
+    z-index: 2;
+
+    width:
+        min(
+            1500px,
+            calc(100% - 80px)
+        );
+
+    margin: 0 auto;
+
+    padding:
+        55px 0 70px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.dashboard-header {
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    margin-bottom: 38px;
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.dashboard-eyebrow {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: #777777;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.dashboard-header h1 {
+    margin: 0;
+
+    color: #111111;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(
+            40px,
+            5vw,
+            60px
+        );
+
+    font-weight: 400;
+
+    line-height: 0.95;
+
+    letter-spacing: -2.5px;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.dashboard-header p {
+    max-width: 520px;
+
+    margin:
+        12px 0 0;
+
+    color: #777777;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   LIVE STATUS
+========================================================= */
+
+.dashboard-live {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding:
+        9px 13px;
+
+    border:
+        1px solid
+        #c9dfcf;
+
+    border-radius: 22px;
+
+    background: #f1f9f3;
+
+    color: #28733c;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.2px;
+
+    white-space: nowrap;
+}
+
+
+.dashboard-live span {
+    width: 6px;
+    height: 6px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #38a957;
+
+    box-shadow: none;
+
+    animation:
+        livePulse
+        2s
+        ease-in-out
+        infinite;
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.dashboard-error {
+    margin-bottom: 18px;
+
+    padding:
+        14px 16px;
+
+    border:
+        1px solid
+        #e5b5b5;
+
+    border-radius: 10px;
+
+    background: #fff4f4;
+
+    color: #9f2525;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   STATISTICS
+========================================================= */
+
+.dashboard-stats {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            4,
+            minmax(
+                0,
+                1fr
+            )
+        );
+
+    gap: 16px;
+
+    margin-bottom: 16px;
+}
+
+
+/* =========================================================
+   STAT CARD
+========================================================= */
+
+.dashboard-stat-card {
+    position: relative;
+
+    min-height: 165px;
+
+    box-sizing: border-box;
+
+    padding: 24px;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(
+            0,
+            0,
+            0,
+            0.08
+        );
+
+    border-radius: 17px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 8px 35px
+        rgba(
+            0,
+            0,
+            0,
+            0.045
+        );
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.dashboard-stat-card::after {
+    display: none;
+}
+
+
+.dashboard-stat-card:hover {
+    transform:
+        translateY(-4px);
+
+    border-color:
+        rgba(
+            0,
+            0,
+            0,
+            0.15
+        );
+
+    background: #ffffff;
+
+    box-shadow:
+        0 15px 45px
+        rgba(
+            0,
+            0,
+            0,
+            0.08
+        );
+}
+
+
+/* =========================================================
+   STAT TOP
+========================================================= */
+
+.stat-card-top {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 28px;
+}
+
+
+.stat-card-top > span {
+    color: #777777;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.6px;
+}
+
+
+/* =========================================================
+   STAT ICON
+========================================================= */
+
+.stat-icon {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border:
+        1px solid
+        rgba(
+            0,
+            0,
+            0,
+            0.10
+        );
+
+    border-radius: 9px;
+
+    background: #fafafa;
+
+    color: #111111;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   STAT NUMBER
+========================================================= */
+
+.dashboard-stat-card strong {
+    display: block;
+
+    color: #111111;
+
+    font-size: 38px;
+
+    font-weight: 500;
+
+    line-height: 1;
+
+    letter-spacing: -1.5px;
+}
+
+
+/* =========================================================
+   STAT DESCRIPTION
+========================================================= */
+
+.dashboard-stat-card p {
+    margin:
+        9px 0 0;
+
+    color: #888888;
+
+    font-size: 10px;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   FINANCIAL
+========================================================= */
+
+.dashboard-financial {
+    display: grid;
+
+    grid-template-columns:
+        1.4fr 1fr;
+
+    gap: 16px;
+
+    margin-bottom: 45px;
+}
+
+
+/* =========================================================
+   REVENUE CARD
+========================================================= */
+
+.revenue-card {
+    position: relative;
+
+    min-height: 205px;
+
+    box-sizing: border-box;
+
+    padding: 28px;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(
+            0,
+            0,
+            0,
+            0.08
+        );
+
+    border-radius: 18px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 8px 35px
+        rgba(
+            0,
+            0,
+            0,
+            0.045
+        );
+}
+
+
+/* =========================================================
+   PRIMARY REVENUE
+========================================================= */
+
+.revenue-primary {
+    background: #ffffff;
+
+    border-color:
+        rgba(
+            0,
+            0,
+            0,
+            0.08
+        );
+}
+
+
+/* =========================================================
+   REVENUE CONTENT
+========================================================= */
+
+.revenue-content {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.revenue-label {
+    display: block;
+
+    margin-bottom: 18px;
+
+    color: #777777;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.8px;
+}
+
+
+.revenue-content strong {
+    display: block;
+
+    color: #111111;
+
+    font-size:
+        clamp(
+            30px,
+            4vw,
+            45px
+        );
+
+    font-weight: 500;
+
+    line-height: 1;
+
+    letter-spacing: -1.8px;
+}
+
+
+.revenue-content p {
+    max-width: 320px;
+
+    margin:
+        11px 0 0;
+
+    color: #888888;
+
+    font-size: 10px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   REMOVE ORBIT EFFECT
+========================================================= */
+
+.revenue-orbit {
+    display: none;
+}
+
+
+.revenue-orbit-ring {
+    display: none;
+}
+
+
+.revenue-orbit-ring::before {
+    display: none;
+}
+
+
+.revenue-orbit-dot {
+    display: none;
+}
+
+
+/* =========================================================
+   PENDING INDICATOR
+========================================================= */
+
+.pending-indicator {
+    position: absolute;
+
+    right: 25px;
+    bottom: 25px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: #777777;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+
+.pending-indicator span {
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: #d99a00;
+
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   RECENT PROJECTS
+========================================================= */
+
+.recent-projects {
+    margin-top: 10px;
+}
+
+
+/* =========================================================
+   RECENT HEADER
+========================================================= */
+
+.recent-header {
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 18px;
+}
+
+
+.recent-header > div > span {
+    color: #777777;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.8px;
+}
+
+
+.recent-header h2 {
+    margin:
+        8px 0 0;
+
+    color: #111111;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 30px;
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    letter-spacing: -1px;
+}
+
+
+/* =========================================================
+   VIEW PROJECTS
+========================================================= */
+
+.view-projects {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    color: #555555;
+
+    text-decoration: none;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    transition:
+        color 0.2s ease;
+}
+
+
+.view-projects span {
+    font-size: 16px;
+}
+
+
+.view-projects:hover {
+    color: #111111;
+}
+
+
+/* =========================================================
+   RECENT TABLE
+========================================================= */
+
+.recent-table-card {
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(
+            0,
+            0,
+            0,
+            0.08
+        );
+
+    border-radius: 17px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 8px 35px
+        rgba(
+            0,
+            0,
+            0,
+            0.045
+        );
+}
+
+
+/* =========================================================
+   TABLE WRAPPER
+========================================================= */
+
+.recent-table-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.recent-table {
+    width: 100%;
+
+    min-width: 800px;
+
+    border-collapse: collapse;
+}
+
+
+/* =========================================================
+   TABLE HEAD
+========================================================= */
+
+.recent-table th {
+    padding:
+        18px 20px;
+
+    border-bottom:
+        1px solid
+        rgba(
+            0,
+            0,
+            0,
+            0.08
+        );
+
+    text-align: left;
+
+    color: #888888;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.6px;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   TABLE BODY
+========================================================= */
+
+.recent-table td {
+    padding:
+        18px 20px;
+
+    border-bottom:
+        1px solid
+        rgba(
+            0,
+            0,
+            0,
+            0.055
+        );
+
+    vertical-align: middle;
+}
+
+
+.recent-table tbody tr {
+    transition:
+        background-color 0.2s ease;
+}
+
+
+.recent-table tbody tr:hover {
+    background: #fafafa;
+}
+
+
+.recent-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* =========================================================
+   PROJECT / CLIENT
+========================================================= */
+
+.recent-project-name,
+.recent-client {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+
+.recent-project-name strong,
+.recent-client strong {
+    color: #111111;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    line-height: 1.3;
+}
+
+
+.recent-project-name span,
+.recent-client span {
+    color: #888888;
+
+    font-size: 9px;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.dashboard-status {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding:
+        7px 11px;
+
+    border-radius: 20px;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+
+.dashboard-status i {
+    width: 6px;
+    height: 6px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+}
+
+
+/* =========================================================
+   PENDING
+========================================================= */
+
+.dashboard-status-pending {
+    color: #9a6500;
+
+    background: #fff7e6;
+}
+
+
+.dashboard-status-pending i {
+    background: #d99a00;
+}
+
+
+/* =========================================================
+   IN PROGRESS
+========================================================= */
+
+.dashboard-status-in_progress {
+    color: #315da8;
+
+    background: #f0f5ff;
+}
+
+
+.dashboard-status-in_progress i {
+    background: #4f7fcf;
+}
+
+
+/* =========================================================
+   COMPLETED
+========================================================= */
+
+.dashboard-status-completed {
+    color: #28733c;
+
+    background: #edf8f0;
+}
+
+
+.dashboard-status-completed i {
+    background: #38a957;
+}
+
+
+/* =========================================================
+   VALUES
+========================================================= */
+
+.recent-value {
+    color: #111111;
+
+    font-size: 11px;
+
+    font-weight: 600;
+}
+
+
+.recent-date {
+    color: #888888;
+
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.dashboard-loading {
+    min-height: 300px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 11px;
+
+    color: #777777;
+
+    font-size: 10px;
+
+    font-weight: 600;
+}
+
+
+.dashboard-loading div {
+    width: 20px;
+    height: 20px;
+
+    border:
+        2px solid
+        #dddddd;
+
+    border-top-color:
+        #111111;
+
+    border-radius: 50%;
+
+    animation:
+        dashboardSpin
+        0.7s
+        linear
+        infinite;
+}
+
+
+/* =========================================================
+   EMPTY
+========================================================= */
+
+.dashboard-empty {
+    min-height: 300px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 40px;
+}
+
+
+.dashboard-empty-icon {
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 17px;
+
+    border:
+        1px solid
+        rgba(
+            0,
+            0,
+            0,
+            0.10
+        );
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    color: #111111;
+
+    font-size: 25px;
+}
+
+
+.dashboard-empty h3 {
+    margin: 0;
+
+    color: #111111;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 28px;
+
+    font-weight: 400;
+}
+
+
+.dashboard-empty p {
+    margin:
+        8px 0 0;
+
+    color: #888888;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes dashboardSpin {
+
+    to {
+        transform:
+            rotate(360deg);
+    }
+}
+
+
+@keyframes livePulse {
+
+    0%,
+    100% {
+        opacity: 0.55;
+
+        transform:
+            scale(0.85);
+    }
+
+    50% {
+        opacity: 1;
+
+        transform:
+            scale(1.1);
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .dashboard-container {
+        width:
+            calc(
+                100% - 60px
+            );
+    }
+
+
+    .dashboard-stats {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(
+                    0,
+                    1fr
+                )
+            );
+    }
+
+
+    .dashboard-financial {
+        grid-template-columns:
+            1fr;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .dashboard-container {
+        width:
+            calc(
+                100% - 30px
+            );
+
+        padding:
+            32px 0 50px;
+    }
+
+
+    /* HEADER */
+
+    .dashboard-header {
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+
+        gap: 18px;
+
+        margin-bottom: 30px;
+    }
+
+
+    .dashboard-header h1 {
+        font-size: 40px;
+
+        letter-spacing:
+            -2px;
+    }
+
+
+    .dashboard-header p {
+        font-size: 11px;
+    }
+
+
+    .dashboard-live {
+        align-self:
+            flex-start;
+    }
+
+
+    /* STATS */
+
+    .dashboard-stats {
+        grid-template-columns:
+            1fr;
+
+        gap: 12px;
+    }
+
+
+    .dashboard-stat-card {
+        min-height: 145px;
+
+        padding: 21px;
+    }
+
+
+    .dashboard-stat-card strong {
+        font-size: 34px;
+    }
+
+
+    /* FINANCIAL */
+
+    .dashboard-financial {
+        grid-template-columns:
+            1fr;
+
+        gap: 12px;
+    }
+
+
+    .revenue-card {
+        min-height: 185px;
+
+        padding: 23px;
+    }
+
+
+    .revenue-content strong {
+        font-size: 32px;
+    }
+
+
+    .pending-indicator {
+        right: 20px;
+
+        bottom: 20px;
+    }
+
+
+    /* RECENT */
+
+    .recent-header {
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+
+        gap: 14px;
+    }
+
+
+    .recent-header h2 {
+        font-size: 27px;
+    }
+
+
+    .view-projects {
+        align-self:
+            flex-start;
+    }
+
+
+    .recent-table-card {
+        border-radius: 14px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .dashboard-container {
+        width:
+            calc(
+                100% - 22px
+            );
+    }
+
+
+    .dashboard-header h1 {
+        font-size: 35px;
+    }
+
+
+    .dashboard-stat-card strong {
+        font-size: 31px;
+    }
+
+
+    .revenue-content strong {
+        font-size: 29px;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .admin-dashboard *,
+    .admin-dashboard *::before,
+    .admin-dashboard *::after {
+        animation: none !important;
+
+        transition: none !important;
+    }
+}

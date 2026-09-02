@@ -1,0 +1,778 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap");
+
+
+/* =================================================
+   PAGE
+================================================= */
+
+.employee-login-page {
+    width: 100%;
+    min-height: 100vh;
+
+    background: #ffffff;
+    color: #111111;
+
+    font-family: "Inter", sans-serif;
+
+    overflow: hidden;
+}
+
+
+/* =================================================
+   MAIN CONTAINER
+================================================= */
+
+.employee-login-container {
+    width: 100%;
+    min-height: 100vh;
+
+    display: grid;
+
+    grid-template-columns:
+        48%
+        52%;
+}
+
+
+/* =================================================
+   LEFT PANEL
+================================================= */
+
+.employee-login-left {
+    min-height: 100vh;
+
+    padding:
+        42px
+        48px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    background: #111111;
+    color: #ffffff;
+}
+
+
+/* =================================================
+   BRAND
+================================================= */
+
+.employee-login-brand {
+    font-family:
+        "Anton",
+        Impact,
+        "Arial Narrow",
+        sans-serif;
+
+    font-size: 36px;
+
+    line-height: 1;
+
+    letter-spacing: 1px;
+}
+
+
+/* =================================================
+   EYEBROW
+================================================= */
+
+.employee-login-eyebrow {
+    display: inline-block;
+
+    margin-bottom: 24px;
+
+    color: #ffffff;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+/* =================================================
+   LEFT INTRO
+================================================= */
+
+.employee-login-intro {
+    width: 100%;
+    max-width: 620px;
+}
+
+
+.employee-login-intro h1 {
+    margin: 0;
+
+    font-family:
+        "Anton",
+        Impact,
+        "Arial Narrow",
+        sans-serif;
+
+    font-size:
+        clamp(
+            64px,
+            7vw,
+            120px
+        );
+
+    line-height: 0.9;
+
+    letter-spacing: -1px;
+
+    text-transform: uppercase;
+}
+
+
+.employee-login-intro p {
+    max-width: 420px;
+
+    margin:
+        34px
+        0
+        0;
+
+    color: #bcbcbc;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+/* =================================================
+   LEFT FOOTER
+================================================= */
+
+.employee-login-footer-text {
+    color: #777777;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+/* =================================================
+   RIGHT PANEL
+================================================= */
+
+.employee-login-right {
+    min-height: 100vh;
+
+    padding:
+        60px;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #ffffff;
+}
+
+
+/* =================================================
+   FORM WRAPPER
+================================================= */
+
+.employee-login-form-wrapper {
+    width: 100%;
+
+    max-width: 500px;
+}
+
+
+/* =================================================
+   FORM HEADING
+================================================= */
+
+.employee-login-form-heading {
+    margin-bottom: 48px;
+}
+
+
+.employee-login-form-heading span {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: #777777;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+.employee-login-form-heading h2 {
+    margin: 0;
+
+    font-family:
+        "Anton",
+        Impact,
+        "Arial Narrow",
+        sans-serif;
+
+    font-size: 58px;
+
+    line-height: 0.95;
+
+    letter-spacing: -0.5px;
+
+    text-transform: uppercase;
+
+    font-weight: 400;
+}
+
+
+/* =================================================
+   FORM
+================================================= */
+
+.employee-login-form {
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 28px;
+}
+
+
+/* =================================================
+   FIELD
+================================================= */
+
+.employee-login-field {
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+
+.employee-login-field label {
+    color: #111111;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.8px;
+}
+
+
+/* =================================================
+   PASSWORD LABEL ROW
+================================================= */
+
+.employee-password-label-row {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+}
+
+
+/* =================================================
+   FORGOT PASSWORD
+================================================= */
+
+.employee-forgot-password {
+    padding: 0;
+
+    border: 0;
+
+    background: transparent;
+
+    color: #777777;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.2px;
+
+    cursor: pointer;
+
+    transition: color 0.2s ease;
+}
+
+
+.employee-forgot-password:hover:not(:disabled) {
+    color: #111111;
+}
+
+
+.employee-forgot-password:disabled {
+    cursor: not-allowed;
+
+    opacity: 0.45;
+}
+
+
+/* =================================================
+   INPUT
+================================================= */
+
+.employee-login-field input {
+    width: 100%;
+
+    height: 56px;
+
+    padding:
+        0
+        16px;
+
+    box-sizing: border-box;
+
+    border:
+        1px
+        solid
+        #cfcfcf;
+
+    border-radius: 0;
+
+    background: #ffffff;
+
+    color: #111111;
+
+    font-family:
+        "Inter",
+        sans-serif;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.employee-login-field input::placeholder {
+    color: #9a9a9a;
+}
+
+
+.employee-login-field input:focus {
+    border-color: #111111;
+
+    box-shadow:
+        0
+        0
+        0
+        1px
+        #111111;
+}
+
+
+.employee-login-field input:disabled {
+    background: #f4f4f4;
+
+    cursor: not-allowed;
+}
+
+
+/* =================================================
+   PASSWORD WRAPPER
+================================================= */
+
+.employee-password-wrapper {
+    position: relative;
+
+    width: 100%;
+}
+
+
+.employee-password-wrapper input {
+    padding-right: 75px;
+}
+
+
+/* =================================================
+   SHOW / HIDE BUTTON
+================================================= */
+
+.employee-password-toggle {
+    position: absolute;
+
+    top: 50%;
+    right: 15px;
+
+    transform:
+        translateY(-50%);
+
+    padding: 0;
+
+    border: 0;
+
+    background: transparent;
+
+    color: #555555;
+
+    font-family:
+        "Inter",
+        sans-serif;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+}
+
+
+.employee-password-toggle:hover:not(:disabled) {
+    color: #111111;
+}
+
+
+.employee-password-toggle:disabled {
+    cursor: not-allowed;
+
+    opacity: 0.45;
+}
+
+
+/* =================================================
+   ERROR
+================================================= */
+
+.employee-login-error {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding:
+        12px
+        14px;
+
+    border-left:
+        2px
+        solid
+        #111111;
+
+    background: #f3f3f3;
+
+    color: #111111;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+/* =================================================
+   LOGIN BUTTON
+================================================= */
+
+.employee-login-submit {
+    width: 100%;
+
+    height: 58px;
+
+    margin-top: 8px;
+
+    padding:
+        0
+        20px;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    border:
+        1px
+        solid
+        #111111;
+
+    background: #111111;
+
+    color: #ffffff;
+
+    font-family:
+        "Inter",
+        sans-serif;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.8px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease;
+}
+
+
+.employee-login-submit:hover:not(:disabled) {
+    background: #ffffff;
+
+    color: #111111;
+}
+
+
+.employee-login-submit:disabled {
+    cursor: not-allowed;
+
+    opacity: 0.6;
+}
+
+
+.employee-login-submit-arrow {
+    font-size: 22px;
+
+    font-weight: 400;
+
+    line-height: 1;
+}
+
+
+/* =================================================
+   SECURITY FOOTER
+================================================= */
+
+.employee-login-security {
+    margin-top: 34px;
+
+    padding-top: 18px;
+
+    border-top:
+        1px
+        solid
+        #e1e1e1;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+}
+
+
+.employee-login-security span {
+    color: #8a8a8a;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.4px;
+}
+
+
+/* =================================================
+   MOBILE / TABLET BLOCK
+================================================= */
+
+.employee-login-blocked {
+    width: 100%;
+
+    min-height: 100vh;
+
+    padding:
+        32px
+        24px;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    background: #111111;
+
+    color: #ffffff;
+}
+
+
+.employee-login-blocked-content {
+    width: 100%;
+
+    max-width: 650px;
+
+    margin:
+        auto
+        0;
+}
+
+
+.employee-login-blocked-content h1 {
+    margin: 0;
+
+    font-family:
+        "Anton",
+        Impact,
+        "Arial Narrow",
+        sans-serif;
+
+    font-size:
+        clamp(
+            58px,
+            15vw,
+            100px
+        );
+
+    line-height: 0.9;
+
+    letter-spacing: -1px;
+
+    text-transform: uppercase;
+}
+
+
+.employee-login-blocked-content p {
+    max-width: 480px;
+
+    margin:
+        28px
+        0
+        0;
+
+    color: #bcbcbc;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+.employee-login-small-note {
+    display: block;
+
+    margin-top: 30px;
+
+    color: #777777;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    line-height: 1.5;
+}
+
+
+/* =================================================
+   LARGE TABLET / SMALL DESKTOP
+================================================= */
+
+@media (max-width: 1200px) {
+
+    .employee-login-left {
+        padding:
+            36px;
+    }
+
+
+    .employee-login-right {
+        padding:
+            42px;
+    }
+
+
+    .employee-login-intro h1 {
+        font-size:
+            clamp(
+                60px,
+                7vw,
+                90px
+            );
+    }
+
+}
+
+
+/* =================================================
+   TABLET / MOBILE
+================================================= */
+
+@media (max-width: 1023px) {
+
+    .employee-login-page {
+        overflow: auto;
+    }
+
+
+    .employee-login-container {
+        display: none;
+    }
+
+
+    .employee-login-blocked {
+        min-height: 100dvh;
+    }
+
+}
+
+
+/* =================================================
+   SMALL MOBILE
+================================================= */
+
+@media (max-width: 480px) {
+
+    .employee-login-blocked {
+        padding:
+            28px
+            20px;
+    }
+
+
+    .employee-login-brand {
+        font-size: 32px;
+    }
+
+
+    .employee-login-blocked-content h1 {
+        font-size:
+            clamp(
+                50px,
+                15vw,
+                76px
+            );
+    }
+
+
+    .employee-login-blocked-content p {
+        font-size: 14px;
+    }
+
+}

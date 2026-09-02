@@ -1,0 +1,1951 @@
+/* =========================================================
+   VFOUR ADMIN LOGIN
+========================================================= */
+
+.admin-login-page {
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
+
+    overflow: hidden;
+
+    background:
+        #030303;
+
+    color: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.admin-login-background {
+    position: absolute;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.admin-grid {
+    position: absolute;
+
+    inset: 0;
+
+    opacity: 0.10;
+
+    background-image:
+        linear-gradient(
+            rgba(255, 255, 255, 0.07) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.07) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        80px 80px;
+
+    mask-image:
+        radial-gradient(
+            circle at center,
+            black 0%,
+            transparent 75%
+        );
+
+    -webkit-mask-image:
+        radial-gradient(
+            circle at center,
+            black 0%,
+            transparent 75%
+        );
+}
+
+
+/* =========================================================
+   BACKGROUND GLOW
+========================================================= */
+
+.admin-glow {
+    position: absolute;
+
+    border-radius: 50%;
+
+    filter:
+        blur(100px);
+
+    pointer-events: none;
+}
+
+
+.glow-one {
+    width: 500px;
+    height: 500px;
+
+    left: -250px;
+    top: -220px;
+
+    background:
+        rgba(
+            37,
+            99,
+            235,
+            0.14
+        );
+
+    animation:
+        glowFloatOne
+        12s
+        ease-in-out
+        infinite;
+}
+
+
+.glow-two {
+    width: 450px;
+    height: 450px;
+
+    right: -220px;
+    bottom: -200px;
+
+    background:
+        rgba(
+            37,
+            99,
+            235,
+            0.11
+        );
+
+    animation:
+        glowFloatTwo
+        14s
+        ease-in-out
+        infinite;
+}
+
+
+/* =========================================================
+   NETWORK
+========================================================= */
+
+.admin-network {
+    position: absolute;
+
+    width: 600px;
+    height: 500px;
+
+    right: -80px;
+    top: 50%;
+
+    transform:
+        translateY(-50%);
+
+    opacity: 0.45;
+}
+
+
+/* =========================================================
+   NETWORK NODES
+========================================================= */
+
+.network-node {
+    position: absolute;
+
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background:
+        #ffffff;
+
+    box-shadow:
+        0 0 12px
+        rgba(
+            96,
+            165,
+            250,
+            0.9
+        );
+
+    animation:
+        nodePulse
+        3s
+        ease-in-out
+        infinite;
+}
+
+
+.node-one {
+    left: 100px;
+    top: 150px;
+}
+
+
+.node-two {
+    left: 190px;
+    top: 80px;
+
+    animation-delay:
+        0.4s;
+}
+
+
+.node-three {
+    left: 310px;
+    top: 125px;
+
+    animation-delay:
+        0.8s;
+}
+
+
+.node-four {
+    left: 420px;
+    top: 65px;
+
+    animation-delay:
+        1.2s;
+}
+
+
+.node-five {
+    left: 475px;
+    top: 220px;
+
+    animation-delay:
+        1.6s;
+}
+
+
+.node-six {
+    left: 340px;
+    top: 315px;
+
+    animation-delay:
+        2s;
+}
+
+
+.node-seven {
+    left: 160px;
+    top: 330px;
+
+    animation-delay:
+        2.4s;
+}
+
+
+/* =========================================================
+   NETWORK LINES
+========================================================= */
+
+.network-line {
+    position: absolute;
+
+    height: 1px;
+
+    transform-origin:
+        left center;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(
+                255,
+                255,
+                255,
+                0.45
+            ),
+            rgba(
+                37,
+                99,
+                235,
+                0.8
+            ),
+            transparent
+        );
+
+    animation:
+        linePulse
+        4s
+        ease-in-out
+        infinite;
+}
+
+
+.network-line-one {
+    width: 120px;
+
+    left: 103px;
+    top: 152px;
+
+    transform:
+        rotate(-37deg);
+}
+
+
+.network-line-two {
+    width: 130px;
+
+    left: 193px;
+    top: 82px;
+
+    transform:
+        rotate(22deg);
+
+    animation-delay:
+        0.6s;
+}
+
+
+.network-line-three {
+    width: 150px;
+
+    left: 313px;
+    top: 127px;
+
+    transform:
+        rotate(-25deg);
+
+    animation-delay:
+        1.2s;
+}
+
+
+.network-line-four {
+    width: 150px;
+
+    left: 423px;
+    top: 67px;
+
+    transform:
+        rotate(67deg);
+
+    animation-delay:
+        1.8s;
+}
+
+
+.network-line-five {
+    width: 190px;
+
+    left: 163px;
+    top: 332px;
+
+    transform:
+        rotate(-23deg);
+
+    animation-delay:
+        2.4s;
+}
+
+
+/* =========================================================
+   ORBITS
+========================================================= */
+
+.admin-orbit {
+    position: absolute;
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.055
+        );
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+
+.orbit-one {
+    width: 650px;
+    height: 280px;
+
+    right: -160px;
+    top: 50%;
+
+    transform:
+        translateY(-50%)
+        rotate(-24deg);
+
+    animation:
+        orbitFloat
+        18s
+        linear
+        infinite;
+}
+
+
+.orbit-two {
+    width: 480px;
+    height: 200px;
+
+    right: -80px;
+    top: 50%;
+
+    transform:
+        translateY(-50%)
+        rotate(24deg);
+
+    border-color:
+        rgba(
+            37,
+            99,
+            235,
+            0.10
+        );
+
+    animation:
+        orbitFloatReverse
+        14s
+        linear
+        infinite;
+}
+
+
+.admin-orbit span {
+    position: absolute;
+
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background:
+        #2563eb;
+
+    box-shadow:
+        0 0 18px
+        rgba(
+            37,
+            99,
+            235,
+            0.8
+        );
+}
+
+
+.orbit-one span {
+    top: 12px;
+    left: 35%;
+}
+
+
+.orbit-two span {
+    right: 18%;
+    bottom: 10px;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.admin-login-container {
+    position: relative;
+
+    z-index: 20;
+
+    width:
+        min(
+            430px,
+            calc(100% - 40px)
+        );
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    animation:
+        loginContainerIn
+        0.9s
+        cubic-bezier(
+            0.16,
+            1,
+            0.3,
+            1
+        )
+        both;
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.admin-brand {
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    margin-bottom:
+        26px;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.admin-logo-wrapper {
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    animation:
+        logoReveal
+        1s
+        ease
+        both;
+}
+
+
+.admin-logo {
+    display:
+        block;
+
+    width:
+        145px;
+
+    height:
+        auto;
+
+    object-fit:
+        contain;
+}
+
+
+/* =========================================================
+   BRAND LINE
+========================================================= */
+
+.admin-brand-line {
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        10px;
+
+    margin-top:
+        11px;
+}
+
+
+.admin-brand-line span {
+    width:
+        22px;
+
+    height:
+        1px;
+
+    background:
+        #2563eb;
+
+    opacity:
+        0.8;
+}
+
+
+.admin-brand-line p {
+    margin:
+        0;
+
+    font-family:
+        "Inter",
+        Arial,
+        sans-serif;
+
+    font-size:
+        9px;
+
+    font-weight:
+        600;
+
+    letter-spacing:
+        3px;
+
+    color:
+        #666666;
+}
+
+
+/* =========================================================
+   LOGIN CARD
+========================================================= */
+
+.admin-login-card {
+    position:
+        relative;
+
+    width:
+        100%;
+
+    padding:
+        42px;
+
+    box-sizing:
+        border-box;
+
+    overflow:
+        hidden;
+
+    background:
+        rgba(
+            11,
+            11,
+            11,
+            0.92
+        );
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.09
+        );
+
+    border-radius:
+        28px;
+
+    box-shadow:
+        0 40px 100px
+        rgba(
+            0,
+            0,
+            0,
+            0.55
+        );
+
+    backdrop-filter:
+        blur(30px);
+
+    -webkit-backdrop-filter:
+        blur(30px);
+
+    animation:
+        cardReveal
+        0.9s
+        0.15s
+        cubic-bezier(
+            0.16,
+            1,
+            0.3,
+            1
+        )
+        both;
+}
+
+
+/* =========================================================
+   CARD TOP GLOW
+========================================================= */
+
+.login-card-glow {
+    position:
+        absolute;
+
+    width:
+        260px;
+
+    height:
+        260px;
+
+    right:
+        -150px;
+
+    top:
+        -150px;
+
+    border-radius:
+        50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(
+                37,
+                99,
+                235,
+                0.18
+            ),
+            transparent 70%
+        );
+
+    filter:
+        blur(10px);
+
+    pointer-events:
+        none;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.admin-login-content {
+    position:
+        relative;
+
+    z-index:
+        5;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.admin-login-header {
+    margin-bottom:
+        30px;
+}
+
+
+.secure-badge {
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        7px;
+
+    margin-bottom:
+        14px;
+
+    font-family:
+        "Inter",
+        Arial,
+        sans-serif;
+
+    font-size:
+        9px;
+
+    font-weight:
+        600;
+
+    letter-spacing:
+        2.2px;
+
+    color:
+        #60a5fa;
+}
+
+
+.secure-dot {
+    width:
+        5px;
+
+    height:
+        5px;
+
+    border-radius:
+        50%;
+
+    background:
+        #2563eb;
+
+    box-shadow:
+        0 0 10px
+        rgba(
+            37,
+            99,
+            235,
+            0.9
+        );
+
+    animation:
+        securePulse
+        2s
+        ease-in-out
+        infinite;
+}
+
+
+.admin-login-header h1 {
+    margin:
+        0;
+
+    font-family:
+        "Inter",
+        "Helvetica Neue",
+        Arial,
+        sans-serif;
+
+    font-size:
+        32px;
+
+    font-weight:
+        500;
+
+    letter-spacing:
+        -1.2px;
+
+    line-height:
+        1.1;
+
+    color:
+        #ffffff;
+}
+
+
+.admin-login-header p {
+    max-width:
+        300px;
+
+    margin:
+        10px 0 0;
+
+    font-family:
+        "Inter",
+        Arial,
+        sans-serif;
+
+    font-size:
+        12px;
+
+    line-height:
+        1.7;
+
+    color:
+        #707070;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.admin-login-form {
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        20px;
+}
+
+
+/* =========================================================
+   FIELD
+========================================================= */
+
+.admin-field {
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        8px;
+}
+
+
+.admin-field label {
+    font-family:
+        "Inter",
+        Arial,
+        sans-serif;
+
+    font-size:
+        9px;
+
+    font-weight:
+        600;
+
+    letter-spacing:
+        1.8px;
+
+    color:
+        #858585;
+}
+
+
+/* =========================================================
+   INPUT WRAPPER
+========================================================= */
+
+.input-wrapper {
+    position:
+        relative;
+
+    width:
+        100%;
+}
+
+
+/* =========================================================
+   INPUT ICON
+========================================================= */
+
+.input-icon {
+    position:
+        absolute;
+
+    left:
+        16px;
+
+    top:
+        50%;
+
+    transform:
+        translateY(-50%);
+
+    z-index:
+        2;
+
+    width:
+        15px;
+
+    color:
+        #555555;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size:
+        14px;
+
+    text-align:
+        center;
+
+    transition:
+        color
+        0.3s ease;
+}
+
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+.input-wrapper input {
+    width:
+        100%;
+
+    height:
+        52px;
+
+    padding:
+        0 45px;
+
+    box-sizing:
+        border-box;
+
+    outline:
+        none;
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.09
+        );
+
+    border-radius:
+        13px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.035
+        );
+
+    color:
+        #ffffff;
+
+    font-family:
+        "Inter",
+        Arial,
+        sans-serif;
+
+    font-size:
+        13px;
+
+    transition:
+        border-color
+        0.35s ease,
+
+        background
+        0.35s ease,
+
+        box-shadow
+        0.35s ease,
+
+        transform
+        0.35s ease;
+}
+
+
+.input-wrapper input::placeholder {
+    color:
+        #4e4e4e;
+}
+
+
+.input-wrapper input:focus {
+    border-color:
+        rgba(
+            37,
+            99,
+            235,
+            0.7
+        );
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.055
+        );
+
+    box-shadow:
+        0 0 0 3px
+        rgba(
+            37,
+            99,
+            235,
+            0.07
+        );
+}
+
+
+.input-wrapper:focus-within
+.input-icon {
+    color:
+        #60a5fa;
+}
+
+
+/* =========================================================
+   PASSWORD TOGGLE
+========================================================= */
+
+.password-toggle {
+    position:
+        absolute;
+
+    right:
+        9px;
+
+    top:
+        50%;
+
+    transform:
+        translateY(-50%);
+
+    width:
+        34px;
+
+    height:
+        34px;
+
+    padding:
+        0;
+
+    border:
+        none;
+
+    background:
+        transparent;
+
+    color:
+        #555555;
+
+    cursor:
+        pointer;
+
+    font-size:
+        17px;
+
+    transition:
+        color
+        0.3s ease;
+}
+
+
+.password-toggle:hover {
+    color:
+        #ffffff;
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.admin-login-error {
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        9px;
+
+    padding:
+        11px 13px;
+
+    border:
+        1px solid
+        rgba(
+            239,
+            68,
+            68,
+            0.22
+        );
+
+    border-radius:
+        11px;
+
+    background:
+        rgba(
+            239,
+            68,
+            68,
+            0.06
+        );
+
+    color:
+        #f87171;
+
+    font-family:
+        "Inter",
+        Arial,
+        sans-serif;
+
+    font-size:
+        10px;
+
+    line-height:
+        1.5;
+
+    animation:
+        errorShake
+        0.35s
+        ease;
+}
+
+
+.admin-login-error span {
+    width:
+        17px;
+
+    height:
+        17px;
+
+    flex-shrink:
+        0;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border:
+        1px solid
+        rgba(
+            239,
+            68,
+            68,
+            0.35
+        );
+
+    border-radius:
+        50%;
+
+    font-size:
+        10px;
+}
+
+
+/* =========================================================
+   LOGIN BUTTON
+========================================================= */
+
+.admin-login-button {
+    position:
+        relative;
+
+    width:
+        100%;
+
+    height:
+        54px;
+
+    margin-top:
+        5px;
+
+    overflow:
+        hidden;
+
+    border:
+        none;
+
+    border-radius:
+        13px;
+
+    background:
+        #ffffff;
+
+    color:
+        #050505;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        14px;
+
+    cursor:
+        pointer;
+
+    font-family:
+        "Inter",
+        Arial,
+        sans-serif;
+
+    font-size:
+        10px;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        1.8px;
+
+    transition:
+        transform
+        0.4s ease,
+
+        background
+        0.4s ease,
+
+        box-shadow
+        0.4s ease;
+}
+
+
+.admin-login-button::before {
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        0;
+
+    height:
+        100%;
+
+    left:
+        50%;
+
+    top:
+        0;
+
+    background:
+        #2563eb;
+
+    transform:
+        translateX(-50%);
+
+    transition:
+        width
+        0.5s
+        cubic-bezier(
+            0.16,
+            1,
+            0.3,
+            1
+        );
+}
+
+
+.admin-login-button:hover::before {
+    width:
+        100%;
+}
+
+
+.admin-login-button:hover {
+    color:
+        #ffffff;
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 18px 40px
+        rgba(
+            37,
+            99,
+            235,
+            0.20
+        );
+}
+
+
+.button-text,
+.button-arrow,
+.login-loader {
+    position:
+        relative;
+
+    z-index:
+        2;
+}
+
+
+.button-arrow {
+    font-size:
+        18px;
+
+    transition:
+        transform
+        0.4s ease;
+}
+
+
+.admin-login-button:hover
+.button-arrow {
+    transform:
+        translate(
+            3px,
+            -3px
+        );
+}
+
+
+/* =========================================================
+   LOADER
+========================================================= */
+
+.login-loader {
+    width:
+        14px;
+
+    height:
+        14px;
+
+    border:
+        2px solid
+        rgba(
+            0,
+            0,
+            0,
+            0.15
+        );
+
+    border-top-color:
+        #050505;
+
+    border-radius:
+        50%;
+
+    animation:
+        loginSpin
+        0.7s
+        linear
+        infinite;
+}
+
+
+.admin-login-button:disabled {
+    cursor:
+        not-allowed;
+
+    opacity:
+        0.7;
+
+    transform:
+        none;
+
+    box-shadow:
+        none;
+}
+
+
+/* =========================================================
+   BOTTOM
+========================================================= */
+
+.admin-login-bottom {
+    width:
+        100%;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    margin-top:
+        18px;
+
+    padding:
+        0 4px;
+
+    box-sizing:
+        border-box;
+}
+
+
+.admin-login-bottom span {
+    font-family:
+        "Inter",
+        Arial,
+        sans-serif;
+
+    font-size:
+        8px;
+
+    font-weight:
+        600;
+
+    letter-spacing:
+        2px;
+
+    color:
+        #3e3e3e;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes loginContainerIn {
+
+    from {
+        opacity:
+            0;
+
+        transform:
+            translateY(30px);
+    }
+
+    to {
+        opacity:
+            1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes cardReveal {
+
+    from {
+        opacity:
+            0;
+
+        transform:
+            translateY(25px)
+            scale(0.97);
+    }
+
+    to {
+        opacity:
+            1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+@keyframes logoReveal {
+
+    from {
+        opacity:
+            0;
+
+        transform:
+            translateY(-15px)
+            scale(0.95);
+    }
+
+    to {
+        opacity:
+            1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+@keyframes nodePulse {
+
+    0%,
+    100% {
+        transform:
+            scale(0.7);
+
+        opacity:
+            0.35;
+    }
+
+    50% {
+        transform:
+            scale(1.5);
+
+        opacity:
+            1;
+    }
+}
+
+
+@keyframes linePulse {
+
+    0%,
+    100% {
+        opacity:
+            0.15;
+    }
+
+    50% {
+        opacity:
+            0.75;
+    }
+}
+
+
+@keyframes securePulse {
+
+    0%,
+    100% {
+        transform:
+            scale(0.8);
+
+        opacity:
+            0.5;
+    }
+
+    50% {
+        transform:
+            scale(1.3);
+
+        opacity:
+            1;
+    }
+}
+
+
+@keyframes glowFloatOne {
+
+    0%,
+    100% {
+        transform:
+            translate(
+                0,
+                0
+            );
+    }
+
+    50% {
+        transform:
+            translate(
+                40px,
+                30px
+            );
+    }
+}
+
+
+@keyframes glowFloatTwo {
+
+    0%,
+    100% {
+        transform:
+            translate(
+                0,
+                0
+            );
+    }
+
+    50% {
+        transform:
+            translate(
+                -35px,
+                -25px
+            );
+    }
+}
+
+
+@keyframes orbitFloat {
+
+    from {
+        transform:
+            translateY(-50%)
+            rotate(-24deg);
+    }
+
+    to {
+        transform:
+            translateY(-50%)
+            rotate(336deg);
+    }
+}
+
+
+@keyframes orbitFloatReverse {
+
+    from {
+        transform:
+            translateY(-50%)
+            rotate(24deg);
+    }
+
+    to {
+        transform:
+            translateY(-50%)
+            rotate(-336deg);
+    }
+}
+
+
+@keyframes loginSpin {
+
+    to {
+        transform:
+            rotate(360deg);
+    }
+}
+
+
+@keyframes errorShake {
+
+    0%,
+    100% {
+        transform:
+            translateX(0);
+    }
+
+    25% {
+        transform:
+            translateX(-4px);
+    }
+
+    75% {
+        transform:
+            translateX(4px);
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .admin-network {
+        right:
+            -250px;
+
+        opacity:
+            0.25;
+    }
+
+    .admin-orbit {
+        right:
+            -300px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .admin-login-page {
+        padding:
+            25px 0;
+    }
+
+
+    .admin-login-container {
+        width:
+            calc(100% - 28px);
+    }
+
+
+    .admin-logo {
+        width:
+            125px;
+    }
+
+
+    .admin-login-card {
+        padding:
+            30px 23px;
+
+        border-radius:
+            22px;
+    }
+
+
+    .admin-login-header h1 {
+        font-size:
+            28px;
+    }
+
+
+    .admin-login-header p {
+        font-size:
+            11px;
+    }
+
+
+    .secure-badge {
+        font-size:
+            8px;
+    }
+
+
+    .admin-field label {
+        font-size:
+            8px;
+    }
+
+
+    .input-wrapper input {
+        height:
+            50px;
+
+        font-size:
+            13px;
+    }
+
+
+    .admin-login-error {
+        font-size:
+            10px;
+    }
+
+
+    .admin-login-button {
+        height:
+            51px;
+
+        font-size:
+            10px;
+    }
+
+
+    .admin-login-bottom span {
+        font-size:
+            7px;
+    }
+
+
+    .admin-network {
+        width:
+            400px;
+
+        height:
+            350px;
+
+        right:
+            -250px;
+
+        opacity:
+            0.18;
+    }
+
+
+    .admin-orbit {
+        opacity:
+            0.5;
+    }
+
+
+    .orbit-one {
+        width:
+            450px;
+
+        height:
+            200px;
+
+        right:
+            -250px;
+    }
+
+
+    .orbit-two {
+        width:
+            350px;
+
+        height:
+            150px;
+
+        right:
+            -200px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .admin-login-container {
+        width:
+            calc(100% - 22px);
+    }
+
+
+    .admin-login-card {
+        padding:
+            27px 19px;
+    }
+
+
+    .admin-logo {
+        width:
+            110px;
+    }
+
+
+    .admin-login-header h1 {
+        font-size:
+            25px;
+    }
+
+
+    .admin-login-header p {
+        font-size:
+            10px;
+    }
+
+
+    .admin-login-form {
+        gap:
+            17px;
+    }
+
+
+    .admin-field label {
+        font-size:
+            8px;
+    }
+
+
+    .input-wrapper input {
+        font-size:
+            12px;
+    }
+
+
+    .admin-login-bottom span {
+        font-size:
+            6px;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .admin-login-container,
+    .admin-login-card,
+    .admin-logo-wrapper,
+    .network-node,
+    .network-line,
+    .admin-orbit,
+    .admin-glow,
+    .secure-dot {
+        animation:
+            none !important;
+
+        transition:
+            none !important;
+    }
+}

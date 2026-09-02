@@ -1,0 +1,169 @@
+.services-strip {
+    width: 100%;
+
+    background: #ffffff;
+
+    border-top:
+        1px solid #e3e3e3;
+
+    border-bottom:
+        1px solid #e3e3e3;
+
+    overflow: hidden;
+}
+
+
+.services-strip-window {
+    width: 100%;
+
+    overflow: hidden;
+}
+
+
+.services-strip-track {
+    width: max-content;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding:
+        10px 14px;
+
+    animation:
+        servicesMarquee
+        32s
+        linear
+        infinite;
+}
+
+
+.services-strip-item {
+    flex-shrink: 0;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 43px;
+
+    padding:
+        0 25px;
+
+    border:
+        1px solid #d8d8d8;
+
+    border-left:
+        3px solid #111111;
+
+    border-radius:
+        10px;
+
+    background:
+        #ffffff;
+
+    color:
+        #171717;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size:
+        9px;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        0.8px;
+
+    white-space:
+        nowrap;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+.services-strip-item:hover {
+    background:
+        #111111;
+
+    color:
+        #ffffff;
+
+    border-color:
+        #111111;
+}
+
+
+@keyframes servicesMarquee {
+
+    from {
+        transform:
+            translateX(0);
+    }
+
+    to {
+        transform:
+            translateX(-50%);
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .services-strip-track {
+        gap:
+            8px;
+
+        padding:
+            8px 10px;
+
+        animation-duration:
+            26s;
+    }
+
+
+    .services-strip-item {
+        min-height:
+            38px;
+
+        padding:
+            0 17px;
+
+        font-size:
+            7px;
+
+        border-left-width:
+            2px;
+
+        border-radius:
+            8px;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .services-strip-track {
+        animation:
+            none;
+    }
+}

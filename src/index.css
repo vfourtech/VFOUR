@@ -1,0 +1,404 @@
+@import "tailwindcss";
+
+/* =========================================================
+   GOOGLE FONTS
+========================================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap");
+
+
+/* =========================================================
+   VFOUR DESIGN SYSTEM
+========================================================= */
+
+:root {
+
+    /* ---------- Core Colors ---------- */
+
+    --black: #050505;
+    --near-black: #0D0D0D;
+
+    --white: #FFFFFF;
+    --off-white: #F5F5F5;
+
+    --gray: #A1A1A1;
+    --gray-light: #D4D4D4;
+    --gray-dark: #666666;
+
+    /* ---------- Accent ---------- */
+
+    --blue: #2563EB;
+    --blue-light: #60A5FA;
+    --blue-dark: #1D4ED8;
+
+    /* ---------- Borders ---------- */
+
+    --border-dark: rgba(255, 255, 255, 0.10);
+    --border-light: rgba(0, 0, 0, 0.10);
+
+    /* ---------- Typography ---------- */
+
+    --font-display: "Cinzel", serif;
+    --font-body: "Inter", sans-serif;
+
+    /* ---------- Transitions ---------- */
+
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.35s ease;
+    --transition-slow: 0.6s ease;
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   HTML
+========================================================= */
+
+html {
+    scroll-behavior: smooth;
+
+    font-size: 16px;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   BODY
+========================================================= */
+
+body {
+
+    width: 100%;
+    min-height: 100vh;
+
+    background: var(--black);
+    color: var(--white);
+
+    font-family: var(--font-body);
+
+    overflow-x: hidden;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+#root {
+
+    width: 100%;
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   HEADINGS
+========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+
+    font-family: var(--font-display);
+
+    font-weight: 600;
+
+    line-height: 1.15;
+
+    letter-spacing: 0.02em;
+}
+
+
+/* =========================================================
+   PARAGRAPHS
+========================================================= */
+
+p {
+
+    font-family: var(--font-body);
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   LINKS
+========================================================= */
+
+a {
+
+    color: inherit;
+
+    text-decoration: none;
+
+    transition:
+        color var(--transition-normal),
+        opacity var(--transition-normal);
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+button {
+
+    border: none;
+
+    outline: none;
+
+    font-family: var(--font-body);
+
+    cursor: pointer;
+
+    background: none;
+
+    color: inherit;
+}
+
+
+/* =========================================================
+   IMAGES
+========================================================= */
+
+img {
+
+    display: block;
+
+    max-width: 100%;
+
+    height: auto;
+}
+
+
+/* =========================================================
+   INPUTS / TEXTAREA / SELECT
+========================================================= */
+
+input,
+textarea,
+select {
+
+    font-family: var(--font-body);
+
+    outline: none;
+}
+
+
+/* =========================================================
+   SELECTION
+========================================================= */
+
+::selection {
+
+    background: var(--blue);
+
+    color: var(--white);
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar {
+
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+
+    background: var(--black);
+}
+
+::-webkit-scrollbar-thumb {
+
+    background: #2A2A2A;
+
+    border-radius: 10px;
+
+    transition: background var(--transition-normal);
+}
+
+::-webkit-scrollbar-thumb:hover {
+
+    background: var(--blue);
+}
+
+
+/* =========================================================
+   DARK SECTION
+========================================================= */
+
+.section-dark {
+
+    background: var(--black);
+
+    color: var(--white);
+}
+
+
+/* =========================================================
+   LIGHT SECTION
+========================================================= */
+
+.section-light {
+
+    background: var(--off-white);
+
+    color: var(--black);
+}
+
+
+/* =========================================================
+   BLUE TEXT
+========================================================= */
+
+.text-blue {
+
+    color: var(--blue);
+}
+
+
+/* =========================================================
+   BLUE GLOW
+========================================================= */
+
+.blue-glow {
+
+    box-shadow:
+        0 0 30px rgba(37, 99, 235, 0.18);
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.container {
+
+    width: min(92%, 1400px);
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   SECTION SPACING
+========================================================= */
+
+.section {
+
+    width: 100%;
+
+    padding: 120px 0;
+}
+
+
+/* =========================================================
+   MOBILE TAP HIGHLIGHT
+========================================================= */
+
+button,
+a {
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+
+        scroll-behavior: auto !important;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    .section {
+        padding: 100px 0;
+    }
+
+}
+
+
+@media (max-width: 768px) {
+
+    html {
+        font-size: 15px;
+    }
+
+    .section {
+        padding: 80px 0;
+    }
+
+    .container {
+        width: 90%;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    html {
+        font-size: 14px;
+    }
+
+    .section {
+        padding: 65px 0;
+    }
+
+    .container {
+        width: 88%;
+    }
+
+}
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+}

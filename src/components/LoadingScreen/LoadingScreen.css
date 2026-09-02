@@ -1,0 +1,1174 @@
+/* =========================================================
+   VFOUR — LOADING SCREEN
+   PREMIUM DIGITAL ATMOSPHERE
+========================================================= */
+
+.loading-screen {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 45%,
+            #202020 0%,
+            #121212 24%,
+            #080808 52%,
+            #030303 100%
+        );
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   SOFT CENTRAL ATMOSPHERE
+========================================================= */
+
+.loading-glow {
+    position: absolute;
+
+    width: 900px;
+    height: 650px;
+
+    left: 50%;
+    top: 48%;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(255, 255, 255, 0.075) 0%,
+            rgba(255, 255, 255, 0.04) 24%,
+            rgba(255, 255, 255, 0.018) 45%,
+            transparent 72%
+        );
+
+    filter: blur(40px);
+
+    pointer-events: none;
+
+    animation: ambientPulse 8s ease-in-out infinite;
+}
+
+
+@keyframes ambientPulse {
+
+    0%,
+    100% {
+        opacity: 0.65;
+
+        transform:
+            translate(-50%, -50%)
+            scale(0.96);
+    }
+
+    50% {
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1.05);
+    }
+}
+
+
+/* =========================================================
+   SOFT BACKGROUND ATMOSPHERE
+========================================================= */
+
+.loading-grid {
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+
+        radial-gradient(
+            circle at 18% 25%,
+            rgba(255, 255, 255, 0.025) 0,
+            transparent 20%
+        ),
+
+        radial-gradient(
+            circle at 82% 22%,
+            rgba(255, 255, 255, 0.022) 0,
+            transparent 22%
+        ),
+
+        radial-gradient(
+            circle at 12% 75%,
+            rgba(255, 255, 255, 0.02) 0,
+            transparent 20%
+        ),
+
+        radial-gradient(
+            circle at 88% 76%,
+            rgba(255, 255, 255, 0.025) 0,
+            transparent 23%
+        );
+}
+
+
+/* =========================================================
+   SUBTLE CENTRAL LIGHT
+========================================================= */
+
+.loading-screen::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 680px;
+    height: 380px;
+
+    left: 50%;
+    top: 48%;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(255, 255, 255, 0.035),
+            transparent 70%
+        );
+
+    filter: blur(30px);
+
+    pointer-events: none;
+
+    animation: centralLight 6s ease-in-out infinite;
+}
+
+
+@keyframes centralLight {
+
+    0%,
+    100% {
+        opacity: 0.55;
+
+        transform:
+            translate(-50%, -50%)
+            scale(0.95);
+    }
+
+    50% {
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1.06);
+    }
+}
+
+
+/* =========================================================
+   SOFT ELLIPTICAL RINGS
+========================================================= */
+
+.loading-screen::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 780px;
+    height: 300px;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%)
+        rotate(-8deg);
+
+    border-radius: 50%;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.025);
+
+    box-shadow:
+        0 0 80px rgba(255, 255, 255, 0.012);
+
+    pointer-events: none;
+
+    animation: ringFloat 18s ease-in-out infinite alternate;
+}
+
+
+@keyframes ringFloat {
+
+    0% {
+        transform:
+            translate(-50%, -50%)
+            rotate(-8deg)
+            scale(0.98);
+    }
+
+    100% {
+        transform:
+            translate(-50%, -50%)
+            rotate(5deg)
+            scale(1.03);
+    }
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.loading-content {
+
+    position: relative;
+
+    z-index: 10;
+
+    width: min(90%, 620px);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   SYSTEM LABEL
+========================================================= */
+
+.system-label {
+
+    margin-bottom: 28px;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 9px;
+
+    font-weight: 500;
+
+    letter-spacing: 4px;
+
+    color: #777777;
+}
+
+
+/* =========================================================
+   V4 MARK CONTAINER
+========================================================= */
+
+.loading-mark-container {
+
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+
+/* =========================================================
+   V4 MARK
+========================================================= */
+
+.loading-mark {
+
+    position: relative;
+
+    font-family: "Cinzel", serif;
+
+    font-size: clamp(90px, 13vw, 155px);
+
+    font-weight: 600;
+
+    line-height: 0.9;
+
+    letter-spacing: 2px;
+
+    color: #ffffff;
+
+    text-shadow:
+        0 0 20px rgba(255, 255, 255, 0.07),
+        0 0 60px rgba(255, 255, 255, 0.025);
+}
+
+
+/* 4 remains white / light gray */
+
+.loading-mark span {
+
+    color: #eeeeee;
+
+    text-shadow:
+        0 0 18px rgba(255, 255, 255, 0.04);
+}
+
+
+/* =========================================================
+   SMALL BLUE BRAND ACCENT
+========================================================= */
+
+.mark-line {
+
+    width: 68px;
+
+    height: 1px;
+
+    margin-top: 20px;
+
+    background: #2563eb;
+
+    opacity: 0.75;
+
+    box-shadow:
+        0 0 8px rgba(37, 99, 235, 0.35);
+
+    transform-origin: center;
+
+    animation: linePulse 3s ease-in-out infinite;
+}
+
+
+@keyframes linePulse {
+
+    0%,
+    100% {
+        transform: scaleX(0.65);
+
+        opacity: 0.4;
+    }
+
+    50% {
+        transform: scaleX(1);
+
+        opacity: 0.8;
+    }
+}
+
+
+/* =========================================================
+   SYSTEM STATUS
+========================================================= */
+
+.loading-status {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    margin-top: 32px;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 500;
+
+    letter-spacing: 3px;
+
+    color: #eeeeee;
+}
+
+
+/* =========================================================
+   STATUS DOT
+========================================================= */
+
+.status-dot {
+
+    width: 4px;
+
+    height: 4px;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 0 7px rgba(255, 255, 255, 0.45);
+
+    animation:
+        statusPulse
+        2s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes statusPulse {
+
+    0%,
+    100% {
+        opacity: 0.3;
+
+        transform: scale(0.8);
+    }
+
+    50% {
+        opacity: 1;
+
+        transform: scale(1.2);
+    }
+}
+
+
+/* =========================================================
+   CAPABILITIES
+========================================================= */
+
+.system-capabilities {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    margin-top: 18px;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 8px;
+
+    font-weight: 500;
+
+    letter-spacing: 2px;
+
+    color: #606060;
+}
+
+
+/* Separators */
+
+.system-capabilities i {
+
+    width: 3px;
+
+    height: 3px;
+
+    border-radius: 50%;
+
+    background: #606060;
+
+    opacity: 0.8;
+}
+
+
+/* =========================================================
+   PROGRESS AREA
+========================================================= */
+
+.loading-progress-area {
+
+    width: min(360px, 80vw);
+
+    margin-top: 42px;
+}
+
+
+/* =========================================================
+   PROGRESS INFORMATION
+========================================================= */
+
+.progress-info {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 9px;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 8px;
+
+    font-weight: 500;
+
+    letter-spacing: 2px;
+
+    color: #555555;
+}
+
+
+.progress-number {
+
+    color: #dddddd;
+}
+
+
+/* =========================================================
+   PROGRESS TRACK
+========================================================= */
+
+.loading-track {
+
+    width: 100%;
+
+    height: 1px;
+
+    overflow: hidden;
+
+    background:
+        rgba(255, 255, 255, 0.12);
+}
+
+
+/* =========================================================
+   PROGRESS BAR
+========================================================= */
+
+.loading-progress {
+
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #555555 0%,
+            #bdbdbd 82%,
+            #ffffff 96%,
+            #2563eb 100%
+        );
+
+    box-shadow:
+        0 0 8px rgba(255, 255, 255, 0.12);
+
+    transition:
+        width 0.02s linear;
+}
+
+
+/* =========================================================
+   FOOTER LABEL
+========================================================= */
+
+.loading-footer {
+
+    margin-top: 32px;
+
+    font-family: "Cinzel", serif;
+
+    font-size: 8px;
+
+    letter-spacing: 3px;
+
+    color: #414141;
+}
+
+
+/* =========================================================
+   FLOATING DIGITAL PARTICLES
+========================================================= */
+
+.loading-particles {
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   PARTICLE BASE
+========================================================= */
+
+.loading-particles span {
+
+    position: absolute;
+
+    width: var(--size, 3px);
+
+    height: var(--size, 3px);
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.6);
+
+    box-shadow:
+        0 0 8px rgba(255, 255, 255, 0.18);
+
+    opacity: 0.35;
+
+    animation:
+        particleFloat
+        var(--duration, 8s)
+        ease-in-out
+        infinite;
+
+    animation-delay:
+        var(--delay, 0s);
+}
+
+
+/* =========================================================
+   PARTICLE 01
+========================================================= */
+
+.loading-particles span:nth-child(1) {
+
+    left: 14%;
+    top: 22%;
+
+    --size: 4px;
+    --duration: 8s;
+    --delay: -2s;
+}
+
+
+/* =========================================================
+   PARTICLE 02
+========================================================= */
+
+.loading-particles span:nth-child(2) {
+
+    left: 25%;
+    top: 38%;
+
+    --size: 2px;
+    --duration: 10s;
+    --delay: -5s;
+}
+
+
+/* =========================================================
+   PARTICLE 03
+========================================================= */
+
+.loading-particles span:nth-child(3) {
+
+    left: 9%;
+    top: 63%;
+
+    --size: 3px;
+    --duration: 7s;
+    --delay: -1s;
+}
+
+
+/* =========================================================
+   PARTICLE 04
+========================================================= */
+
+.loading-particles span:nth-child(4) {
+
+    left: 19%;
+    top: 78%;
+
+    --size: 5px;
+    --duration: 11s;
+    --delay: -7s;
+}
+
+
+/* =========================================================
+   PARTICLE 05
+========================================================= */
+
+.loading-particles span:nth-child(5) {
+
+    left: 77%;
+    top: 20%;
+
+    --size: 3px;
+    --duration: 9s;
+    --delay: -4s;
+}
+
+
+/* =========================================================
+   PARTICLE 06
+========================================================= */
+
+.loading-particles span:nth-child(6) {
+
+    left: 88%;
+    top: 35%;
+
+    --size: 2px;
+    --duration: 8s;
+    --delay: -2s;
+}
+
+
+/* =========================================================
+   PARTICLE 07
+========================================================= */
+
+.loading-particles span:nth-child(7) {
+
+    left: 91%;
+    top: 67%;
+
+    --size: 4px;
+    --duration: 10s;
+    --delay: -6s;
+}
+
+
+/* =========================================================
+   PARTICLE 08
+========================================================= */
+
+.loading-particles span:nth-child(8) {
+
+    left: 73%;
+    top: 82%;
+
+    --size: 5px;
+    --duration: 12s;
+    --delay: -8s;
+}
+
+
+/* =========================================================
+   PARTICLE 09
+========================================================= */
+
+.loading-particles span:nth-child(9) {
+
+    left: 34%;
+    top: 18%;
+
+    --size: 2px;
+    --duration: 9s;
+    --delay: -3s;
+}
+
+
+/* =========================================================
+   PARTICLE 10
+========================================================= */
+
+.loading-particles span:nth-child(10) {
+
+    left: 42%;
+    top: 12%;
+
+    --size: 3px;
+    --duration: 12s;
+    --delay: -7s;
+}
+
+
+/* =========================================================
+   PARTICLE 11
+========================================================= */
+
+.loading-particles span:nth-child(11) {
+
+    left: 58%;
+    top: 16%;
+
+    --size: 2px;
+    --duration: 8s;
+    --delay: -4s;
+}
+
+
+/* =========================================================
+   PARTICLE 12
+========================================================= */
+
+.loading-particles span:nth-child(12) {
+
+    left: 66%;
+    top: 32%;
+
+    --size: 3px;
+    --duration: 11s;
+    --delay: -2s;
+}
+
+
+/* =========================================================
+   PARTICLE 13
+========================================================= */
+
+.loading-particles span:nth-child(13) {
+
+    left: 31%;
+    top: 60%;
+
+    --size: 2px;
+    --duration: 9s;
+    --delay: -6s;
+}
+
+
+/* =========================================================
+   PARTICLE 14
+========================================================= */
+
+.loading-particles span:nth-child(14) {
+
+    left: 67%;
+    top: 61%;
+
+    --size: 3px;
+    --duration: 10s;
+    --delay: -5s;
+}
+
+
+/* =========================================================
+   PARTICLE 15
+========================================================= */
+
+.loading-particles span:nth-child(15) {
+
+    left: 43%;
+    top: 76%;
+
+    --size: 2px;
+    --duration: 8s;
+    --delay: -1s;
+}
+
+
+/* =========================================================
+   PARTICLE 16
+========================================================= */
+
+.loading-particles span:nth-child(16) {
+
+    left: 56%;
+    top: 84%;
+
+    --size: 3px;
+    --duration: 13s;
+    --delay: -9s;
+}
+
+
+/* =========================================================
+   PARTICLE 17
+========================================================= */
+
+.loading-particles span:nth-child(17) {
+
+    left: 4%;
+    top: 48%;
+
+    --size: 2px;
+    --duration: 9s;
+    --delay: -3s;
+}
+
+
+/* =========================================================
+   PARTICLE 18
+========================================================= */
+
+.loading-particles span:nth-child(18) {
+
+    left: 96%;
+    top: 53%;
+
+    --size: 2px;
+    --duration: 11s;
+    --delay: -6s;
+}
+
+
+/* =========================================================
+   PARTICLE 19
+========================================================= */
+
+.loading-particles span:nth-child(19) {
+
+    left: 37%;
+    top: 91%;
+
+    --size: 2px;
+    --duration: 10s;
+    --delay: -4s;
+}
+
+
+/* =========================================================
+   PARTICLE 20
+========================================================= */
+
+.loading-particles span:nth-child(20) {
+
+    left: 63%;
+    top: 8%;
+
+    --size: 2px;
+    --duration: 12s;
+    --delay: -8s;
+}
+
+
+/* =========================================================
+   PARTICLE ANIMATION
+========================================================= */
+
+@keyframes particleFloat {
+
+    0% {
+
+        transform:
+            translate3d(0, 15px, 0)
+            scale(0.7);
+
+        opacity: 0.12;
+    }
+
+    25% {
+
+        opacity: 0.35;
+    }
+
+    50% {
+
+        transform:
+            translate3d(12px, -20px, 0)
+            scale(1);
+
+        opacity: 0.65;
+    }
+
+    75% {
+
+        opacity: 0.3;
+    }
+
+    100% {
+
+        transform:
+            translate3d(-8px, -40px, 0)
+            scale(0.65);
+
+        opacity: 0.08;
+    }
+}
+
+
+/* =========================================================
+   VERY SOFT PARTICLE GLOW
+========================================================= */
+
+.loading-particles span:nth-child(4),
+.loading-particles span:nth-child(8),
+.loading-particles span:nth-child(16) {
+
+    box-shadow:
+        0 0 14px rgba(255, 255, 255, 0.12);
+}
+
+
+/* =========================================================
+   ONLY TWO BLUE PARTICLES
+========================================================= */
+
+.loading-particles span:nth-child(3),
+.loading-particles span:nth-child(17) {
+
+    background: #2563eb;
+
+    opacity: 0.5;
+
+    box-shadow:
+        0 0 7px rgba(37, 99, 235, 0.3);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .loading-glow {
+
+        width: 600px;
+
+        height: 450px;
+    }
+
+
+    .loading-screen::after {
+
+        width: 600px;
+
+        height: 230px;
+    }
+
+
+    .loading-mark {
+
+        font-size: 100px;
+    }
+
+
+    .system-label {
+
+        font-size: 8px;
+
+        letter-spacing: 3px;
+    }
+
+
+    .loading-status {
+
+        font-size: 9px;
+
+        letter-spacing: 2.5px;
+    }
+
+
+    .system-capabilities {
+
+        gap: 9px;
+
+        font-size: 7px;
+
+        letter-spacing: 1.5px;
+    }
+
+
+    .loading-progress-area {
+
+        width: 72vw;
+
+        margin-top: 36px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .loading-glow {
+
+        width: 440px;
+
+        height: 330px;
+    }
+
+
+    .loading-screen::after {
+
+        width: 430px;
+
+        height: 170px;
+    }
+
+
+    .loading-mark {
+
+        font-size: 82px;
+    }
+
+
+    .system-label {
+
+        font-size: 7px;
+
+        letter-spacing: 2.5px;
+
+        margin-bottom: 22px;
+    }
+
+
+    .loading-status {
+
+        margin-top: 27px;
+
+        font-size: 8px;
+
+        letter-spacing: 2px;
+    }
+
+
+    .system-capabilities {
+
+        gap: 7px;
+
+        font-size: 6px;
+
+        letter-spacing: 1.2px;
+    }
+
+
+    .loading-progress-area {
+
+        width: 78vw;
+
+        margin-top: 32px;
+    }
+
+
+    .loading-footer {
+
+        font-size: 7px;
+
+        letter-spacing: 2px;
+    }
+
+
+    .loading-particles span {
+
+        opacity: 0.25;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .loading-glow,
+    .loading-screen::before,
+    .loading-screen::after,
+    .mark-line,
+    .status-dot,
+    .loading-particles span {
+
+        animation: none;
+    }
+
+}
