@@ -1,17 +1,14 @@
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { supabase } from "../../lib/supabase";
 
 import "./AdminSidebar.css";
 
 const AdminSidebar = () => {
-    const navigate = useNavigate();
 
     const handleLogout = async () => {
         await supabase.auth.signOut();
 
-        navigate("/", {
-            replace: true,
-        });
+        window.location.replace("/");
     };
 
     return (
