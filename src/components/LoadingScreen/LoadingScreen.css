@@ -1,17 +1,16 @@
 /* =========================================================
    VFOUR — LOADING SCREEN
-   PREMIUM DIGITAL ATMOSPHERE
-========================================================= */
+   Premium Monochrome Theme
+   ========================================================= */
 
 .loading-screen {
     position: fixed;
     inset: 0;
+    z-index: 9999;
 
     width: 100%;
     height: 100vh;
     height: 100dvh;
-
-    z-index: 9999;
 
     display: flex;
     align-items: center;
@@ -21,29 +20,97 @@
 
     background:
         radial-gradient(
-            ellipse at 50% 45%,
-            #202020 0%,
-            #121212 24%,
-            #080808 52%,
-            #030303 100%
+            circle at 50% 45%,
+            #181818 0%,
+            #101010 25%,
+            #080808 55%,
+            #030303 80%,
+            #000000 100%
         );
 
     color: #ffffff;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 }
 
 
 /* =========================================================
-   SOFT CENTRAL ATMOSPHERE
-========================================================= */
+   BACKGROUND GRID
+   ========================================================= */
+
+.loading-grid {
+    position: absolute;
+    inset: -15%;
+
+    width: 130%;
+    height: 130%;
+
+    opacity: 0.11;
+
+    background-image:
+        linear-gradient(
+            rgba(255, 255, 255, 0.07) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.07) 1px,
+            transparent 1px
+        );
+
+    background-size: 65px 65px;
+
+    transform:
+        perspective(750px)
+        rotateX(62deg)
+        scale(1.8);
+
+    transform-origin: center bottom;
+
+    animation:
+        loadingGridMove
+        14s
+        linear
+        infinite;
+
+    pointer-events: none;
+}
+
+
+@keyframes loadingGridMove {
+    0% {
+        transform:
+            perspective(750px)
+            rotateX(62deg)
+            scale(1.8)
+            translateY(0);
+    }
+
+    100% {
+        transform:
+            perspective(750px)
+            rotateX(62deg)
+            scale(1.8)
+            translateY(65px);
+    }
+}
+
+
+/* =========================================================
+   CENTRAL GLOW
+   ========================================================= */
 
 .loading-glow {
     position: absolute;
 
-    width: 900px;
-    height: 650px;
-
+    top: 45%;
     left: 50%;
-    top: 48%;
+
+    width: 680px;
+    height: 680px;
 
     transform: translate(-50%, -50%);
 
@@ -51,30 +118,33 @@
 
     background:
         radial-gradient(
-            ellipse,
-            rgba(255, 255, 255, 0.075) 0%,
-            rgba(255, 255, 255, 0.04) 24%,
+            circle,
+            rgba(255, 255, 255, 0.09) 0%,
+            rgba(255, 255, 255, 0.045) 25%,
             rgba(255, 255, 255, 0.018) 45%,
             transparent 72%
         );
 
-    filter: blur(40px);
+    filter: blur(25px);
+
+    animation:
+        loadingGlow
+        5s
+        ease-in-out
+        infinite;
 
     pointer-events: none;
-
-    animation: ambientPulse 8s ease-in-out infinite;
 }
 
 
-@keyframes ambientPulse {
-
+@keyframes loadingGlow {
     0%,
     100% {
-        opacity: 0.65;
+        opacity: 0.5;
 
         transform:
             translate(-50%, -50%)
-            scale(0.96);
+            scale(0.92);
     }
 
     50% {
@@ -82,175 +152,262 @@
 
         transform:
             translate(-50%, -50%)
-            scale(1.05);
+            scale(1.08);
     }
 }
 
 
 /* =========================================================
-   SOFT BACKGROUND ATMOSPHERE
-========================================================= */
+   ORBIT RING ONE
+   ========================================================= */
 
-.loading-grid {
+.loading-orbit-one {
     position: absolute;
 
-    inset: 0;
-
-    pointer-events: none;
-
-    background:
-
-        radial-gradient(
-            circle at 18% 25%,
-            rgba(255, 255, 255, 0.025) 0,
-            transparent 20%
-        ),
-
-        radial-gradient(
-            circle at 82% 22%,
-            rgba(255, 255, 255, 0.022) 0,
-            transparent 22%
-        ),
-
-        radial-gradient(
-            circle at 12% 75%,
-            rgba(255, 255, 255, 0.02) 0,
-            transparent 20%
-        ),
-
-        radial-gradient(
-            circle at 88% 76%,
-            rgba(255, 255, 255, 0.025) 0,
-            transparent 23%
-        );
-}
-
-
-/* =========================================================
-   SUBTLE CENTRAL LIGHT
-========================================================= */
-
-.loading-screen::before {
-
-    content: "";
-
-    position: absolute;
-
-    width: 680px;
-    height: 380px;
-
+    top: 45%;
     left: 50%;
-    top: 48%;
 
-    transform:
-        translate(-50%, -50%);
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            ellipse,
-            rgba(255, 255, 255, 0.035),
-            transparent 70%
-        );
-
-    filter: blur(30px);
-
-    pointer-events: none;
-
-    animation: centralLight 6s ease-in-out infinite;
-}
-
-
-@keyframes centralLight {
-
-    0%,
-    100% {
-        opacity: 0.55;
-
-        transform:
-            translate(-50%, -50%)
-            scale(0.95);
-    }
-
-    50% {
-        opacity: 1;
-
-        transform:
-            translate(-50%, -50%)
-            scale(1.06);
-    }
-}
-
-
-/* =========================================================
-   SOFT ELLIPTICAL RINGS
-========================================================= */
-
-.loading-screen::after {
-
-    content: "";
-
-    position: absolute;
-
-    width: 780px;
-    height: 300px;
-
-    left: 50%;
-    top: 50%;
+    width: 520px;
+    height: 520px;
 
     transform:
         translate(-50%, -50%)
-        rotate(-8deg);
+        rotateX(65deg);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.07);
 
     border-radius: 50%;
 
-    border:
-        1px solid rgba(255, 255, 255, 0.025);
-
-    box-shadow:
-        0 0 80px rgba(255, 255, 255, 0.012);
+    animation:
+        loadingOrbitOne
+        20s
+        linear
+        infinite;
 
     pointer-events: none;
-
-    animation: ringFloat 18s ease-in-out infinite alternate;
 }
 
 
-@keyframes ringFloat {
-
-    0% {
+@keyframes loadingOrbitOne {
+    from {
         transform:
             translate(-50%, -50%)
-            rotate(-8deg)
-            scale(0.98);
+            rotateX(65deg)
+            rotateZ(0deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotateX(65deg)
+            rotateZ(360deg);
+    }
+}
+
+
+/* =========================================================
+   ORBIT RING TWO
+   ========================================================= */
+
+.loading-orbit-two {
+    position: absolute;
+
+    top: 45%;
+    left: 50%;
+
+    width: 720px;
+    height: 720px;
+
+    transform:
+        translate(-50%, -50%)
+        rotateX(68deg);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.035);
+
+    border-radius: 50%;
+
+    animation:
+        loadingOrbitTwo
+        28s
+        linear
+        infinite
+        reverse;
+
+    pointer-events: none;
+}
+
+
+@keyframes loadingOrbitTwo {
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotateX(68deg)
+            rotateZ(0deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotateX(68deg)
+            rotateZ(360deg);
+    }
+}
+
+
+/* =========================================================
+   PARTICLES
+   ========================================================= */
+
+.loading-particles {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    pointer-events: none;
+}
+
+
+.loading-particles span {
+    position: absolute;
+
+    display: block;
+
+    width: 3px;
+    height: 3px;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    opacity: 0;
+
+    box-shadow:
+        0 0 7px
+        rgba(255, 255, 255, 0.55);
+
+    animation:
+        loadingParticle
+        5s
+        ease-in-out
+        infinite;
+}
+
+
+.loading-particles span:nth-child(1) {
+    top: 20%;
+    left: 12%;
+    animation-delay: 0s;
+}
+
+
+.loading-particles span:nth-child(2) {
+    top: 17%;
+    left: 82%;
+    animation-delay: 1s;
+}
+
+
+.loading-particles span:nth-child(3) {
+    top: 72%;
+    left: 73%;
+    animation-delay: 2s;
+}
+
+
+.loading-particles span:nth-child(4) {
+    top: 77%;
+    left: 18%;
+    animation-delay: 3s;
+}
+
+
+.loading-particles span:nth-child(5) {
+    top: 48%;
+    left: 91%;
+    animation-delay: 1.5s;
+}
+
+
+.loading-particles span:nth-child(6) {
+    top: 55%;
+    left: 7%;
+    animation-delay: 2.5s;
+}
+
+
+.loading-particles span:nth-child(7) {
+    top: 11%;
+    left: 62%;
+    animation-delay: 3.5s;
+}
+
+
+.loading-particles span:nth-child(8) {
+    top: 86%;
+    left: 39%;
+    animation-delay: 4s;
+}
+
+
+@keyframes loadingParticle {
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(20px)
+            scale(0.5);
+    }
+
+    25% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+
+        transform:
+            translateY(-15px)
+            scale(1);
+    }
+
+    75% {
+        opacity: 0.4;
     }
 
     100% {
+        opacity: 0;
+
         transform:
-            translate(-50%, -50%)
-            rotate(5deg)
-            scale(1.03);
+            translateY(-45px)
+            scale(0.5);
     }
 }
 
 
 /* =========================================================
    MAIN CONTENT
-========================================================= */
+   ========================================================= */
 
 .loading-content {
-
     position: relative;
-
     z-index: 10;
 
-    width: min(90%, 620px);
+    width:
+        min(
+            760px,
+            calc(100% - 48px)
+        );
 
     display: flex;
-
     flex-direction: column;
-
     align-items: center;
 
     text-align: center;
@@ -258,917 +415,770 @@
 
 
 /* =========================================================
-   SYSTEM LABEL
-========================================================= */
+   EYEBROW
+   ========================================================= */
 
-.system-label {
+.loading-eyebrow {
+    margin:
+        0
+        0
+        26px;
 
-    margin-bottom: 28px;
+    font-size: 10px;
+    font-weight: 600;
 
-    font-family: "Inter", sans-serif;
+    line-height: 1;
 
-    font-size: 9px;
+    letter-spacing: 0.38em;
 
-    font-weight: 500;
+    color: #858585;
 
-    letter-spacing: 4px;
-
-    color: #777777;
+    text-transform: uppercase;
 }
 
 
 /* =========================================================
-   V4 MARK CONTAINER
-========================================================= */
+   LOGO
+   ========================================================= */
 
-.loading-mark-container {
-
+.loading-logo-wrapper {
     position: relative;
 
     display: flex;
-
-    flex-direction: column;
-
     align-items: center;
+    justify-content: center;
+
+    margin-bottom: 32px;
 }
 
 
-/* =========================================================
-   V4 MARK
-========================================================= */
+.loading-logo-wrapper::before {
+    content: "";
 
-.loading-mark {
+    position: absolute;
 
+    width: 150px;
+    height: 150px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 255, 255, 0.09) 0%,
+            rgba(255, 255, 255, 0.03) 42%,
+            transparent 72%
+        );
+
+    filter: blur(14px);
+
+    animation:
+        logoAura
+        4s
+        ease-in-out
+        infinite;
+}
+
+
+.loading-logo {
     position: relative;
+    z-index: 2;
 
-    font-family: "Cinzel", serif;
+    display: block;
 
-    font-size: clamp(90px, 13vw, 155px);
+    width: 105px;
+    height: auto;
 
-    font-weight: 600;
+    object-fit: contain;
 
-    line-height: 0.9;
+    filter:
+        brightness(0)
+        invert(1)
+        drop-shadow(
+            0 0 16px
+            rgba(255, 255, 255, 0.18)
+        );
 
-    letter-spacing: 2px;
-
-    color: #ffffff;
-
-    text-shadow:
-        0 0 20px rgba(255, 255, 255, 0.07),
-        0 0 60px rgba(255, 255, 255, 0.025);
+    animation:
+        logoFloat
+        4s
+        ease-in-out
+        infinite;
 }
 
 
-/* 4 remains white / light gray */
-
-.loading-mark span {
-
-    color: #eeeeee;
-
-    text-shadow:
-        0 0 18px rgba(255, 255, 255, 0.04);
-}
-
-
-/* =========================================================
-   SMALL BLUE BRAND ACCENT
-========================================================= */
-
-.mark-line {
-
-    width: 68px;
-
-    height: 1px;
-
-    margin-top: 20px;
-
-    background: #2563eb;
-
-    opacity: 0.75;
-
-    box-shadow:
-        0 0 8px rgba(37, 99, 235, 0.35);
-
-    transform-origin: center;
-
-    animation: linePulse 3s ease-in-out infinite;
-}
-
-
-@keyframes linePulse {
-
+@keyframes logoFloat {
     0%,
     100% {
-        transform: scaleX(0.65);
-
-        opacity: 0.4;
+        transform: translateY(0);
     }
 
     50% {
-        transform: scaleX(1);
+        transform: translateY(-6px);
+    }
+}
 
+
+@keyframes logoAura {
+    0%,
+    100% {
+        opacity: 0.35;
+
+        transform: scale(0.9);
+    }
+
+    50% {
         opacity: 0.8;
+
+        transform: scale(1.08);
     }
 }
 
 
 /* =========================================================
-   SYSTEM STATUS
-========================================================= */
+   TITLE
+   ========================================================= */
 
-.loading-status {
+.loading-title {
+    margin: 0;
 
-    display: flex;
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
 
-    align-items: center;
+    font-size:
+        clamp(
+            42px,
+            7vw,
+            78px
+        );
 
-    gap: 9px;
+    font-weight: 400;
 
-    margin-top: 32px;
+    line-height: 0.98;
 
-    font-family: "Inter", sans-serif;
+    letter-spacing: -0.045em;
 
-    font-size: 10px;
+    color: #ffffff;
 
-    font-weight: 500;
+    text-transform: uppercase;
+}
 
-    letter-spacing: 3px;
 
-    color: #eeeeee;
+.loading-title span {
+    display: block;
+
+    color: #888888;
 }
 
 
 /* =========================================================
-   STATUS DOT
-========================================================= */
+   DESCRIPTION
+   ========================================================= */
 
-.status-dot {
+.loading-description {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    width: 4px;
+    gap: 10px;
 
-    height: 4px;
+    margin:
+        20px
+        0
+        0;
+
+    font-size: 10px;
+    font-weight: 500;
+
+    line-height: 1.5;
+
+    letter-spacing: 0.28em;
+
+    color: #707070;
+
+    text-transform: uppercase;
+}
+
+
+.loading-description span {
+    color: #4c4c4c;
+}
+
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+.loading-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    margin-top: 34px;
+
+    padding:
+        8px
+        14px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.09);
+
+    border-radius: 999px;
+
+    background:
+        rgba(255, 255, 255, 0.02);
+
+    box-shadow:
+        inset 0 1px 0
+        rgba(255, 255, 255, 0.03);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    font-size: 8px;
+    font-weight: 600;
+
+    line-height: 1;
+
+    letter-spacing: 0.17em;
+
+    color: #858585;
+
+    text-transform: uppercase;
+}
+
+
+.loading-status-dot {
+    width: 5px;
+    height: 5px;
+
+    flex-shrink: 0;
 
     border-radius: 50%;
 
     background: #ffffff;
 
     box-shadow:
-        0 0 7px rgba(255, 255, 255, 0.45);
+        0 0 0 3px
+        rgba(255, 255, 255, 0.045),
+
+        0 0 8px
+        rgba(255, 255, 255, 0.45);
 
     animation:
         statusPulse
-        2s
+        1.5s
         ease-in-out
         infinite;
 }
 
 
 @keyframes statusPulse {
-
     0%,
     100% {
-        opacity: 0.3;
-
+        opacity: 0.35;
         transform: scale(0.8);
     }
 
     50% {
         opacity: 1;
-
-        transform: scale(1.2);
+        transform: scale(1);
     }
 }
 
 
 /* =========================================================
-   CAPABILITIES
-========================================================= */
-
-.system-capabilities {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 13px;
-
-    margin-top: 18px;
-
-    font-family: "Inter", sans-serif;
-
-    font-size: 8px;
-
-    font-weight: 500;
-
-    letter-spacing: 2px;
-
-    color: #606060;
-}
-
-
-/* Separators */
-
-.system-capabilities i {
-
-    width: 3px;
-
-    height: 3px;
-
-    border-radius: 50%;
-
-    background: #606060;
-
-    opacity: 0.8;
-}
-
-
-/* =========================================================
-   PROGRESS AREA
-========================================================= */
+   MINIMAL PROGRESS AREA
+   ========================================================= */
 
 .loading-progress-area {
+    width: 260px;
 
-    width: min(360px, 80vw);
-
-    margin-top: 42px;
+    margin-top: 27px;
 }
 
 
-/* =========================================================
-   PROGRESS INFORMATION
-========================================================= */
-
-.progress-info {
-
+.loading-progress-header {
     display: flex;
-
-    justify-content: space-between;
-
     align-items: center;
-
-    margin-bottom: 9px;
-
-    font-family: "Inter", sans-serif;
-
-    font-size: 8px;
-
-    font-weight: 500;
-
-    letter-spacing: 2px;
-
-    color: #555555;
-}
-
-
-.progress-number {
-
-    color: #dddddd;
-}
-
-
-/* =========================================================
-   PROGRESS TRACK
-========================================================= */
-
-.loading-track {
+    justify-content: space-between;
 
     width: 100%;
 
+    margin-bottom: 8px;
+}
+
+
+.loading-progress-label {
+    font-size: 7px;
+    font-weight: 500;
+
+    line-height: 1;
+
+    letter-spacing: 0.18em;
+
+    color: #505050;
+
+    text-transform: uppercase;
+}
+
+
+.loading-progress-number {
+    min-width: 35px;
+
+    font-family:
+        "Courier New",
+        Courier,
+        monospace;
+
+    font-size: 8px;
+
+    line-height: 1;
+
+    color: #737373;
+
+    text-align: right;
+}
+
+
+.loading-progress-track {
+    position: relative;
+
+    width: 100%;
     height: 1px;
 
     overflow: hidden;
 
     background:
-        rgba(255, 255, 255, 0.12);
+        rgba(255, 255, 255, 0.10);
 }
 
-
-/* =========================================================
-   PROGRESS BAR
-========================================================= */
 
 .loading-progress {
-
-    height: 100%;
-
-    background:
-        linear-gradient(
-            90deg,
-            #555555 0%,
-            #bdbdbd 82%,
-            #ffffff 96%,
-            #2563eb 100%
-        );
-
-    box-shadow:
-        0 0 8px rgba(255, 255, 255, 0.12);
-
-    transition:
-        width 0.02s linear;
-}
-
-
-/* =========================================================
-   FOOTER LABEL
-========================================================= */
-
-.loading-footer {
-
-    margin-top: 32px;
-
-    font-family: "Cinzel", serif;
-
-    font-size: 8px;
-
-    letter-spacing: 3px;
-
-    color: #414141;
-}
-
-
-/* =========================================================
-   FLOATING DIGITAL PARTICLES
-========================================================= */
-
-.loading-particles {
-
     position: absolute;
 
+    top: 0;
+    left: 0;
+
+    width: 0;
+    height: 1px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 0 6px
+        rgba(255, 255, 255, 0.3);
+
+    transition:
+        width
+        0.08s
+        linear;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.loading-footer {
+    position: absolute;
+
+    bottom: 26px;
+    left: 50%;
+
+    z-index: 10;
+
+    width: 100%;
+
+    padding:
+        0
+        20px;
+
+    transform: translateX(-50%);
+
+    font-size: 7px;
+    font-weight: 500;
+
+    line-height: 1.5;
+
+    letter-spacing: 0.28em;
+
+    color: #4d4d4d;
+
+    text-align: center;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   VIGNETTE
+   ========================================================= */
+
+.loading-screen::after {
+    content: "";
+
+    position: absolute;
     inset: 0;
+
+    z-index: 3;
 
     pointer-events: none;
 
-    overflow: hidden;
-}
-
-
-/* =========================================================
-   PARTICLE BASE
-========================================================= */
-
-.loading-particles span {
-
-    position: absolute;
-
-    width: var(--size, 3px);
-
-    height: var(--size, 3px);
-
-    border-radius: 50%;
-
     background:
-        rgba(255, 255, 255, 0.6);
-
-    box-shadow:
-        0 0 8px rgba(255, 255, 255, 0.18);
-
-    opacity: 0.35;
-
-    animation:
-        particleFloat
-        var(--duration, 8s)
-        ease-in-out
-        infinite;
-
-    animation-delay:
-        var(--delay, 0s);
+        radial-gradient(
+            ellipse at center,
+            transparent 38%,
+            rgba(0, 0, 0, 0.18) 65%,
+            rgba(0, 0, 0, 0.65) 100%
+        );
 }
 
 
 /* =========================================================
-   PARTICLE 01
-========================================================= */
+   TABLET
+   ========================================================= */
 
-.loading-particles span:nth-child(1) {
+@media (max-width: 768px) {
 
-    left: 14%;
-    top: 22%;
-
-    --size: 4px;
-    --duration: 8s;
-    --delay: -2s;
-}
-
-
-/* =========================================================
-   PARTICLE 02
-========================================================= */
-
-.loading-particles span:nth-child(2) {
-
-    left: 25%;
-    top: 38%;
-
-    --size: 2px;
-    --duration: 10s;
-    --delay: -5s;
-}
-
-
-/* =========================================================
-   PARTICLE 03
-========================================================= */
-
-.loading-particles span:nth-child(3) {
-
-    left: 9%;
-    top: 63%;
-
-    --size: 3px;
-    --duration: 7s;
-    --delay: -1s;
-}
-
-
-/* =========================================================
-   PARTICLE 04
-========================================================= */
-
-.loading-particles span:nth-child(4) {
-
-    left: 19%;
-    top: 78%;
-
-    --size: 5px;
-    --duration: 11s;
-    --delay: -7s;
-}
-
-
-/* =========================================================
-   PARTICLE 05
-========================================================= */
-
-.loading-particles span:nth-child(5) {
-
-    left: 77%;
-    top: 20%;
-
-    --size: 3px;
-    --duration: 9s;
-    --delay: -4s;
-}
-
-
-/* =========================================================
-   PARTICLE 06
-========================================================= */
-
-.loading-particles span:nth-child(6) {
-
-    left: 88%;
-    top: 35%;
-
-    --size: 2px;
-    --duration: 8s;
-    --delay: -2s;
-}
-
-
-/* =========================================================
-   PARTICLE 07
-========================================================= */
-
-.loading-particles span:nth-child(7) {
-
-    left: 91%;
-    top: 67%;
-
-    --size: 4px;
-    --duration: 10s;
-    --delay: -6s;
-}
-
-
-/* =========================================================
-   PARTICLE 08
-========================================================= */
-
-.loading-particles span:nth-child(8) {
-
-    left: 73%;
-    top: 82%;
-
-    --size: 5px;
-    --duration: 12s;
-    --delay: -8s;
-}
-
-
-/* =========================================================
-   PARTICLE 09
-========================================================= */
-
-.loading-particles span:nth-child(9) {
-
-    left: 34%;
-    top: 18%;
-
-    --size: 2px;
-    --duration: 9s;
-    --delay: -3s;
-}
-
-
-/* =========================================================
-   PARTICLE 10
-========================================================= */
-
-.loading-particles span:nth-child(10) {
-
-    left: 42%;
-    top: 12%;
-
-    --size: 3px;
-    --duration: 12s;
-    --delay: -7s;
-}
-
-
-/* =========================================================
-   PARTICLE 11
-========================================================= */
-
-.loading-particles span:nth-child(11) {
-
-    left: 58%;
-    top: 16%;
-
-    --size: 2px;
-    --duration: 8s;
-    --delay: -4s;
-}
-
-
-/* =========================================================
-   PARTICLE 12
-========================================================= */
-
-.loading-particles span:nth-child(12) {
-
-    left: 66%;
-    top: 32%;
-
-    --size: 3px;
-    --duration: 11s;
-    --delay: -2s;
-}
-
-
-/* =========================================================
-   PARTICLE 13
-========================================================= */
-
-.loading-particles span:nth-child(13) {
-
-    left: 31%;
-    top: 60%;
-
-    --size: 2px;
-    --duration: 9s;
-    --delay: -6s;
-}
-
-
-/* =========================================================
-   PARTICLE 14
-========================================================= */
-
-.loading-particles span:nth-child(14) {
-
-    left: 67%;
-    top: 61%;
-
-    --size: 3px;
-    --duration: 10s;
-    --delay: -5s;
-}
-
-
-/* =========================================================
-   PARTICLE 15
-========================================================= */
-
-.loading-particles span:nth-child(15) {
-
-    left: 43%;
-    top: 76%;
-
-    --size: 2px;
-    --duration: 8s;
-    --delay: -1s;
-}
-
-
-/* =========================================================
-   PARTICLE 16
-========================================================= */
-
-.loading-particles span:nth-child(16) {
-
-    left: 56%;
-    top: 84%;
-
-    --size: 3px;
-    --duration: 13s;
-    --delay: -9s;
-}
-
-
-/* =========================================================
-   PARTICLE 17
-========================================================= */
-
-.loading-particles span:nth-child(17) {
-
-    left: 4%;
-    top: 48%;
-
-    --size: 2px;
-    --duration: 9s;
-    --delay: -3s;
-}
-
-
-/* =========================================================
-   PARTICLE 18
-========================================================= */
-
-.loading-particles span:nth-child(18) {
-
-    left: 96%;
-    top: 53%;
-
-    --size: 2px;
-    --duration: 11s;
-    --delay: -6s;
-}
-
-
-/* =========================================================
-   PARTICLE 19
-========================================================= */
-
-.loading-particles span:nth-child(19) {
-
-    left: 37%;
-    top: 91%;
-
-    --size: 2px;
-    --duration: 10s;
-    --delay: -4s;
-}
-
-
-/* =========================================================
-   PARTICLE 20
-========================================================= */
-
-.loading-particles span:nth-child(20) {
-
-    left: 63%;
-    top: 8%;
-
-    --size: 2px;
-    --duration: 12s;
-    --delay: -8s;
-}
-
-
-/* =========================================================
-   PARTICLE ANIMATION
-========================================================= */
-
-@keyframes particleFloat {
-
-    0% {
-
-        transform:
-            translate3d(0, 15px, 0)
-            scale(0.7);
-
-        opacity: 0.12;
-    }
-
-    25% {
-
-        opacity: 0.35;
-    }
-
-    50% {
-
-        transform:
-            translate3d(12px, -20px, 0)
-            scale(1);
-
-        opacity: 0.65;
-    }
-
-    75% {
-
-        opacity: 0.3;
-    }
-
-    100% {
-
-        transform:
-            translate3d(-8px, -40px, 0)
-            scale(0.65);
-
+    .loading-grid {
         opacity: 0.08;
+
+        background-size: 55px 55px;
     }
-}
 
 
-/* =========================================================
-   VERY SOFT PARTICLE GLOW
-========================================================= */
-
-.loading-particles span:nth-child(4),
-.loading-particles span:nth-child(8),
-.loading-particles span:nth-child(16) {
-
-    box-shadow:
-        0 0 14px rgba(255, 255, 255, 0.12);
-}
+    .loading-glow {
+        width: 520px;
+        height: 520px;
+    }
 
 
-/* =========================================================
-   ONLY TWO BLUE PARTICLES
-========================================================= */
+    .loading-orbit-one {
+        width: 420px;
+        height: 420px;
+    }
 
-.loading-particles span:nth-child(3),
-.loading-particles span:nth-child(17) {
 
-    background: #2563eb;
+    .loading-orbit-two {
+        width: 590px;
+        height: 590px;
+    }
 
-    opacity: 0.5;
 
-    box-shadow:
-        0 0 7px rgba(37, 99, 235, 0.3);
+    .loading-content {
+        width:
+            min(
+                620px,
+                calc(100% - 40px)
+            );
+    }
+
+
+    .loading-eyebrow {
+        margin-bottom: 22px;
+
+        font-size: 9px;
+
+        letter-spacing: 0.28em;
+    }
+
+
+    .loading-logo {
+        width: 88px;
+    }
+
+
+    .loading-logo-wrapper {
+        margin-bottom: 26px;
+    }
+
+
+    .loading-title {
+        font-size:
+            clamp(
+                38px,
+                9vw,
+                62px
+            );
+    }
+
+
+    .loading-description {
+        margin-top: 17px;
+
+        font-size: 9px;
+
+        letter-spacing: 0.22em;
+    }
+
+
+    .loading-status {
+        margin-top: 29px;
+    }
+
+
+    .loading-progress-area {
+        width: 240px;
+
+        margin-top: 24px;
+    }
 }
 
 
 /* =========================================================
    MOBILE
-========================================================= */
+   ========================================================= */
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
+
+    .loading-screen {
+        background:
+            radial-gradient(
+                circle at 50% 42%,
+                #151515 0%,
+                #090909 32%,
+                #030303 72%,
+                #000000 100%
+            );
+    }
+
+
+    .loading-grid {
+        opacity: 0.055;
+
+        background-size: 44px 44px;
+    }
+
 
     .loading-glow {
+        width: 390px;
+        height: 390px;
 
-        width: 600px;
-
-        height: 450px;
+        filter: blur(28px);
     }
 
 
-    .loading-screen::after {
-
-        width: 600px;
-
-        height: 230px;
+    .loading-orbit-one {
+        width: 315px;
+        height: 315px;
     }
 
 
-    .loading-mark {
-
-        font-size: 100px;
+    .loading-orbit-two {
+        width: 445px;
+        height: 445px;
     }
 
 
-    .system-label {
+    .loading-content {
+        width:
+            calc(100% - 32px);
+    }
+
+
+    .loading-eyebrow {
+        margin-bottom: 18px;
 
         font-size: 8px;
 
-        letter-spacing: 3px;
+        letter-spacing: 0.20em;
+    }
+
+
+    .loading-logo-wrapper {
+        margin-bottom: 22px;
+    }
+
+
+    .loading-logo {
+        width: 74px;
+    }
+
+
+    .loading-logo-wrapper::before {
+        width: 115px;
+        height: 115px;
+    }
+
+
+    .loading-title {
+        font-size:
+            clamp(
+                29px,
+                11vw,
+                46px
+            );
+
+        line-height: 1;
+
+        letter-spacing: -0.04em;
+    }
+
+
+    .loading-description {
+        gap: 7px;
+
+        margin-top: 15px;
+
+        font-size: 7px;
+
+        letter-spacing: 0.14em;
     }
 
 
     .loading-status {
+        margin-top: 25px;
 
-        font-size: 9px;
+        padding:
+            8px
+            11px;
 
-        letter-spacing: 2.5px;
+        font-size: 6.5px;
+
+        letter-spacing: 0.10em;
     }
 
 
-    .system-capabilities {
-
-        gap: 9px;
-
-        font-size: 7px;
-
-        letter-spacing: 1.5px;
+    .loading-status-dot {
+        width: 4px;
+        height: 4px;
     }
 
 
     .loading-progress-area {
+        width: 210px;
 
-        width: 72vw;
-
-        margin-top: 36px;
+        margin-top: 22px;
     }
 
+
+    .loading-progress-label,
+    .loading-progress-number {
+        font-size: 7px;
+    }
+
+
+    .loading-footer {
+        bottom: 18px;
+
+        font-size: 6px;
+
+        letter-spacing: 0.16em;
+    }
 }
 
 
 /* =========================================================
    SMALL MOBILE
-========================================================= */
+   ========================================================= */
 
-@media (max-width: 480px) {
+@media (max-width: 360px) {
 
-    .loading-glow {
-
-        width: 440px;
-
-        height: 330px;
+    .loading-content {
+        width:
+            calc(100% - 26px);
     }
 
 
-    .loading-screen::after {
-
-        width: 430px;
-
-        height: 170px;
-    }
-
-
-    .loading-mark {
-
-        font-size: 82px;
-    }
-
-
-    .system-label {
-
+    .loading-eyebrow {
         font-size: 7px;
+    }
 
-        letter-spacing: 2.5px;
 
-        margin-bottom: 22px;
+    .loading-logo {
+        width: 66px;
+    }
+
+
+    .loading-title {
+        font-size: 28px;
+    }
+
+
+    .loading-description {
+        font-size: 6.5px;
     }
 
 
     .loading-status {
-
-        margin-top: 27px;
-
-        font-size: 8px;
-
-        letter-spacing: 2px;
-    }
-
-
-    .system-capabilities {
-
-        gap: 7px;
+        margin-top: 22px;
 
         font-size: 6px;
-
-        letter-spacing: 1.2px;
     }
 
 
     .loading-progress-area {
+        width: 190px;
 
-        width: 78vw;
-
-        margin-top: 32px;
+        margin-top: 20px;
     }
 
 
     .loading-footer {
+        bottom: 16px;
 
-        font-size: 7px;
+        font-size: 5.5px;
+    }
+}
 
-        letter-spacing: 2px;
+
+/* =========================================================
+   VERY SMALL SCREENS
+   ========================================================= */
+
+@media (max-width: 320px) {
+
+    .loading-logo {
+        width: 60px;
     }
 
 
-    .loading-particles span {
-
-        opacity: 0.25;
+    .loading-title {
+        font-size: 26px;
     }
 
+
+    .loading-description {
+        font-size: 6px;
+    }
+
+
+    .loading-status {
+        font-size: 5.7px;
+    }
+
+
+    .loading-progress-area {
+        width: 175px;
+    }
 }
 
 
 /* =========================================================
    REDUCED MOTION
-========================================================= */
+   ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
 
+    .loading-grid,
     .loading-glow,
-    .loading-screen::before,
-    .loading-screen::after,
-    .mark-line,
-    .status-dot,
+    .loading-orbit-one,
+    .loading-orbit-two,
+    .loading-logo,
+    .loading-logo-wrapper::before,
+    .loading-status-dot,
     .loading-particles span {
-
-        animation: none;
+        animation: none !important;
     }
 
+
+    .loading-progress {
+        transition: none !important;
+    }
 }
