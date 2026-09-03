@@ -40,7 +40,7 @@ const founders: Founder[] = [
     {
         name: "Malolan",
         role: "SOFTWARE ENGINEER | CLOUD SPECIALIST",
-        image: "/malolan.jpg",
+        image: "/malolan.jpeg",
         description:
         "I focus on building reliable software systems that perform efficiently in production. My expertise includes software engineering, AWS, cloud infrastructure, deployment, databases, and scalable application architecture. I am passionate about designing secure, optimized, and production-ready cloud solutions.",
         linkedin:
