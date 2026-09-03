@@ -153,7 +153,7 @@ const LoadingScreen = ({
                                 duration: 0.7,
                             }}
                         >
-                            VFOUR STUDIO
+                            VFOUR TECHNOLOGIES
                         </motion.div>
 
 
