@@ -687,7 +687,7 @@ const EmployeeDashboard = () => {
         await supabase.auth.signOut();
 
         navigate(
-            "/employee",
+            "/",
             {
                 replace: true,
             }
