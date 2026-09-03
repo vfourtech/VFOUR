@@ -5,11 +5,9 @@ import "./AdminSidebar.css";
 
 const AdminSidebar = () => {
 
-    const handleLogout = async () => {
-        await supabase.auth.signOut();
-
-        window.location.replace("/");
-    };
+   const handleLogout = async () => {
+    await supabase.auth.signOut();
+};
 
     return (
         <aside className="admin-sidebar">

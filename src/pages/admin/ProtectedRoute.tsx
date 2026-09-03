@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+
 import {
     Navigate,
     Outlet,
@@ -22,6 +23,10 @@ const ProtectedRoute = () => {
 
         let mounted = true;
 
+
+        /* =================================================
+           CHECK ADMIN ACCESS
+        ================================================= */
 
         const checkAdminAccess = async () => {
 
@@ -57,7 +62,7 @@ const ProtectedRoute = () => {
 
 
                 /* =================================================
-                   CHECK USER PROFILE
+                   CHECK ADMIN PROFILE
                 ================================================= */
 
                 const {
@@ -111,8 +116,10 @@ const ProtectedRoute = () => {
                 ================================================= */
 
                 if (mounted) {
+
                     setAuthenticated(true);
                     setChecking(false);
+
                 }
 
             } catch (error) {
@@ -125,10 +132,14 @@ const ProtectedRoute = () => {
                 await supabase.auth.signOut();
 
                 if (mounted) {
+
                     setAuthenticated(false);
                     setChecking(false);
+
                 }
+
             }
+
         };
 
 
@@ -143,18 +154,50 @@ const ProtectedRoute = () => {
             data: authListener,
         } =
             supabase.auth.onAuthStateChange(
-                async (_event, session) => {
+                async (event, session) => {
 
-                    if (!session) {
+                    /* =================================================
+                       ADMIN LOGOUT
+                       
+                       When the admin signs out, do NOT allow
+                       ProtectedRoute to redirect to /admin/login.
+                       
+                       Instead, send the user to the public website.
+                    ================================================= */
+
+                    if (
+                        event === "SIGNED_OUT" ||
+                        !session
+                    ) {
 
                         if (mounted) {
+
                             setAuthenticated(false);
                             setChecking(false);
+
+                        }
+
+                        /*
+                         * Full browser navigation prevents
+                         * React Router / ProtectedRoute from
+                         * immediately redirecting to admin login.
+                         */
+
+                        if (
+                            event === "SIGNED_OUT"
+                        ) {
+
+                            window.location.replace("/");
+
                         }
 
                         return;
                     }
 
+
+                    /* =================================================
+                       CHECK ADMIN PROFILE AFTER AUTH CHANGE
+                    ================================================= */
 
                     try {
 
@@ -184,25 +227,35 @@ const ProtectedRoute = () => {
                                 .maybeSingle();
 
 
+                        /* =================================================
+                           INVALID ADMIN
+                        ================================================= */
+
                         if (
                             error ||
                             !profile
                         ) {
 
-                            await supabase.auth.signOut();
-
                             if (mounted) {
+
                                 setAuthenticated(false);
                                 setChecking(false);
+
                             }
 
                             return;
                         }
 
 
+                        /* =================================================
+                           ADMIN VERIFIED
+                        ================================================= */
+
                         if (mounted) {
+
                             setAuthenticated(true);
                             setChecking(false);
+
                         }
 
                     } catch (error) {
@@ -213,13 +266,21 @@ const ProtectedRoute = () => {
                         );
 
                         if (mounted) {
+
                             setAuthenticated(false);
                             setChecking(false);
+
                         }
+
                     }
+
                 }
             );
 
+
+        /* =================================================
+           CLEANUP
+        ================================================= */
 
         return () => {
 
@@ -257,11 +318,15 @@ const ProtectedRoute = () => {
 
             </div>
         );
+
     }
 
 
     /* =================================================
        NOT AUTHORIZED
+       
+       This is only reached when someone tries to access
+       an admin route without being authenticated.
     ================================================= */
 
     if (!authenticated) {
@@ -272,6 +337,7 @@ const ProtectedRoute = () => {
                 replace
             />
         );
+
     }
 
 
@@ -280,6 +346,7 @@ const ProtectedRoute = () => {
     ================================================= */
 
     return <Outlet />;
+
 };
 
 

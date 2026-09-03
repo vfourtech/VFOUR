@@ -261,7 +261,7 @@ const App = () => {
         <Attendance/>
     }/>
     <Route 
-    path="/admin/LeaveRequest"
+    path="/admin/leaverequest"
     element={<LeaveRequests/>}/>
 
                     </Route>
@@ -274,7 +274,7 @@ const App = () => {
                 ================================================= */}
 
                 <Route
-                    path="/employee/login"
+                    path="/employee"
                     element={
                         <EmployeeLogin />
                     }
