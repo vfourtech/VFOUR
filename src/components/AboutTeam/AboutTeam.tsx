@@ -30,7 +30,7 @@ const founders: Founder[] = [
     {
         name: "Dhinesh Kumar",
         role: "PYTHON DEVELOPER | ML ENGINEER",
-        image: "/dhinesh-kumar.jpg",
+        image: "/dhinesh-kumar.jpeg",
         description:
             "Building intelligent solutions is more than just writing code—it’s about transforming complex problems into practical and reliable systems. I specialize in Python development and Machine Learning, building data-driven applications and AI solutions that address real-world challenges. With strong communication and problem-solving skills, I enjoy translating technical ideas into clear, effective solutions and creating intelligent systems that deliver meaningful results.",
         linkedin:
