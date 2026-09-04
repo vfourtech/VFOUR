@@ -12,7 +12,7 @@ const Home = () => {
             <SEO
                 title="VFOUR Technologies | IT, AI, Software & Web Development"
                 description="VFOUR Technologies provides web development, AI solutions, software development, data analytics, cloud computing, technology consulting, poster design and video editing services."
-                path=""
+                path="/"
             />
 
             <Hero />
