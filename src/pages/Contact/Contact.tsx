@@ -13,8 +13,6 @@ const Contact = () => {
     const [organisation, setOrganisation] = useState("");
     const [project, setProject] = useState("");
     const [details, setDetails] = useState("");
-
-
     /* =====================================================
        VALIDATION
     ===================================================== */
