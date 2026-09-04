@@ -13,9 +13,9 @@ const About = () => {
     return (
         <>
         <SEO
-    title="Client Testimonials | VFOUR Technologies"
-    description="See what clients say about VFOUR Technologies and our web development, AI, software, data, cloud and digital solutions."
-    path="/testimonials"
+  title="About VFOUR Technologies | IT & Technology Company"
+  description="Learn about VFOUR Technologies, our team, capabilities and approach to web development, AI, software, data and cloud solutions."
+  path="/about"
 />
             <main className="vfour-about">
 
