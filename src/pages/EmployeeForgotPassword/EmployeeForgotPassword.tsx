@@ -223,7 +223,7 @@ const EmployeeForgotPassword = () => {
                             className="employee-back-login"
                             onClick={() =>
                                 navigate(
-                                    "/employee/login"
+                                    "/employee"
                                 )
                             }
                             disabled={loading}

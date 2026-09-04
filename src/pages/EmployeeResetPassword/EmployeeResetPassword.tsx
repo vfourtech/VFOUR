@@ -281,7 +281,7 @@ const EmployeeResetPassword = () => {
                                     className="employee-reset-login-button"
                                     onClick={() =>
                                         navigate(
-                                            "/employee/login",
+                                            "/employee",
                                             {
                                                 replace: true,
                                             }
@@ -473,7 +473,7 @@ const EmployeeResetPassword = () => {
                                     className="employee-reset-back"
                                     onClick={() =>
                                         navigate(
-                                            "/employee/login"
+                                            "/employee"
                                         )
                                     }
                                     disabled={loading}
