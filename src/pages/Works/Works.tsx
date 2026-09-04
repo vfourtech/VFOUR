@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { supabase } from "../../lib/supabase";
 
 import Footer from "../../components/Footer/Footer";
-
+import SEO from "../../components/SEO/SEO";
 import "./Works.css";
 
 
@@ -217,7 +217,7 @@ const Works = () => {
     if (loading) {
 
         return (
-
+             
             <section
                 className="vfour-works-section"
                 id="our-works"
@@ -264,7 +264,12 @@ const Works = () => {
     return (
 
         <>
-
+        <SEO
+            title="Our Works | VFOUR Technologies"
+            description="Explore websites, software applications, AI solutions, data projects and creative digital solutions built by VFOUR Technologies."
+            path="/works"
+        />
+        
             <section
                 className="vfour-works-section"
                 id="our-works"

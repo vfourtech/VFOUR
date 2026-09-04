@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { supabase } from "../../lib/supabase";
 import "./Testimonials.css";
-
+import SEO from "../../components/SEO/SEO";
 interface Testimonial {
     id: string;
     image_url: string;
@@ -44,6 +44,12 @@ const Testimonials = () => {
     }, []);
 
     return (
+        <>
+<SEO
+    title="Client Testimonials | VFOUR Technologies"
+    description="See what clients say about VFOUR Technologies and our web development, AI, software, data, cloud and digital solutions."
+    path="/testimonials"
+/>
         <section className="testimonials-section">
 
             <div className="testimonials-container">
@@ -136,7 +142,7 @@ const Testimonials = () => {
         
         </section>
         
-       
+       </>
     );
    
 };

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import type { KeyboardEvent } from "react";
 import { useForm } from "@formspree/react";
-
+import SEO from "../../components/SEO/SEO";
 import "./Contact.css";
 
 const Contact = () => {
@@ -126,6 +126,12 @@ const Contact = () => {
 
 
     return (
+        <>
+           <SEO
+            title="Contact VFOUR Technologies | IT & Software Solutions"
+            description="Contact VFOUR Technologies for web development, AI solutions, software development, data analytics, cloud computing and technology services."
+            path="/contact"
+        />
         <section className="contact-section">
 
             {/* =================================================
@@ -517,6 +523,7 @@ const Contact = () => {
             </div>
 
         </section>
+        </>
     );
 };
 
