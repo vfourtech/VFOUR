@@ -17,7 +17,7 @@ const AdminSidebar = () => {
             <div className="admin-sidebar-brand">
 
                 <div className="admin-sidebar-logo">
-    <img src="/logo.png" alt="VFOUR" />
+    <img src="/logo1.png" alt="VFOUR" />
 </div>
 
                 <span>

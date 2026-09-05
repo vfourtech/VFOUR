@@ -7,7 +7,7 @@ import { supabase } from "../../lib/supabase";
 import "./AdminLogin.css";
 
 
-import vfourLogo from "../../assets/logo.png";
+import vfourLogo from "../../assets/logo1.png";
 
 
 const AdminLogin = () => {
