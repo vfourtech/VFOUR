@@ -87,7 +87,7 @@ const Footer = () => {
                             <div className="footer-social">
 
                                 <a
-                                    href="#"
+                                    href="https://www.instagram.com/vfour_tech/"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     aria-label="Instagram"
@@ -96,7 +96,7 @@ const Footer = () => {
                                 </a>
 
                                 <a
-                                    href="#"
+                                    href="https://www.linkedin.com/company/vfour-technologies/"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     aria-label="LinkedIn"
@@ -105,13 +105,13 @@ const Footer = () => {
                                 </a>
 
                                 <a
-                                    href="#"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    aria-label="WhatsApp"
-                                >
-                                    <FaWhatsapp />
-                                </a>
+    href="https://wa.me/918248917988?text=Hello%20VFOUR%20Technologies%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services."
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="WhatsApp"
+>
+    <FaWhatsapp />
+</a>
 
                             </div>
 
