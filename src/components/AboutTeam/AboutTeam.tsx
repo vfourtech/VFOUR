@@ -17,15 +17,6 @@ interface Founder {
 ========================================================= */
 
 const founders: Founder[] = [
-    {
-        name: "Abarna",
-        role: "FULL STACK DEVELOPER | DATA ANALYST",
-        image: "/abarna.png",
-        description:
-            "Technology becomes more powerful when software and data work together. I specialize in Full Stack Development and Data Analytics, with experience in Python, databases, data processing, and visualization. I enjoy building complete web applications while transforming data into meaningful insights and practical, data-driven solutions.",
-        linkedin:
-            "https://www.linkedin.com/in/abarna--s/",
-    },
 
     {
         name: "Dhinesh Kumar",
