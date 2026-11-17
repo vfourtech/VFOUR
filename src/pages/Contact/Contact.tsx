@@ -423,12 +423,17 @@ const Contact = () => {
                                         </span>
                                     </button>
 
-                                    {state.errors && (
-                                        <div className="contact-form-error">
-                                            Something went wrong.
-                                            Please try again.
-                                        </div>
-                                    )}
+{state.errors && (
+    <div className="contact-form-error">
+        <strong>Unable to send your message.</strong>
+
+        {state.errors.getFormErrors().map((error) => (
+            <p key={error.code}>
+                {error.message}
+            </p>
+        ))}
+    </div>
+)}
                                 </>
                             )}
 
