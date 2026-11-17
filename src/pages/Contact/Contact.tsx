@@ -1,4 +1,3 @@
-```tsx
 import { useState } from "react";
 import type { KeyboardEvent } from "react";
 import { useForm } from "@formspree/react";
@@ -445,4 +444,3 @@ const Contact = () => {
 };
 
 export default Contact;
-```
